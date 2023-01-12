@@ -7,11 +7,11 @@ import PersonalDetails from "./PersonalDetails";
 function HeadingPage() {
   return (
     <div className="container">
-      <div className="photoPreview">
+      <div className="photo-preview">
         <ImageFilePreviewer />
         <ImageFileChooser />
       </div>
-      <div>
+      <div className="personal-details">
         <PersonalDetails />
       </div>
     </div>
