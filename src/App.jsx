@@ -1,10 +1,11 @@
 import './App.css';
-import Register from './Component/User/Register/Register';
+import Main from './Component/Main/Main';
 
 function App() {
   return (
     <div className="App">
-    <Register/>
+    
+    <Main/>
     </div>
   );
 }

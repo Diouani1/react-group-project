@@ -1,13 +1,16 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import DataFile from './DataFile';
+import DataOfUser from './DataOfUser';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <DataFile>
-    <App />
-    </DataFile>
+    <DataOfUser>
+
+      <App />
+    </DataOfUser>
+  
 );
 
 
