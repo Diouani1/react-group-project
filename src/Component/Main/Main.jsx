@@ -1,15 +1,12 @@
 import React, { useContext } from 'react'
-import { DataUeser } from '../../DataOfUser'
-import Register from '../Register/Register'
+import HeadingPage from '../HeadingPage/HeadingPage'
+
+
 const Main = () => {
-    const {user} = useContext(DataUeser)
-  return (
     
+  return (
     <div>
-
-{!user? <Register/> : <h1>welcome</h1>}
-
-
+      <HeadingPage/>
     </div>
   )
 }
