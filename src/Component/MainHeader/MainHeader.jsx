@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import {Navbar, Container, Button, } from "react-bootstrap"
 import { DataUeser } from '../../DataOfUser';
 const MainHeader = () => {
-    const {state, user}=useContext(DataUeser)
+    const {setUser, user}=useContext(DataUeser)
     return (
         <div style={{borderBottom: "1px solid", margin:"0 0 1rem"}}>
             <Navbar>
@@ -11,7 +11,7 @@ const MainHeader = () => {
                 <Navbar.Toggle />
                 <Navbar.Collapse className="justify-content-end">
                   <Navbar.Text>
-                   <Button onClick={()=> localStorage.removeItem("user") } >Log Out</Button>
+                   <Button onClick={()=> {localStorage.removeItem("user");setUser(null)} } >Log Out</Button>
                   </Navbar.Text>
                 </Navbar.Collapse>
               </Container>
