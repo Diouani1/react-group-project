@@ -1,69 +1,77 @@
-import React from 'react'
-import { Form ,Button,FloatingLabel} from 'react-bootstrap'
+
+import { Form,Button,FloatingLabel} from 'react-bootstrap'
+import { useContext } from 'react'
+import "./Education.scss"
+import { EduSkillContext } from '../EduSkillContext/EduSkillContext'
+
 const Education = () => {
+    const{edu,efo}=useContext(EduSkillContext)
   return (
     <div className='education'>
-        <h1>Tell us about your education</h1>
+        <h1><span>Tell us about your education</span></h1>
         <p>Include every school, even if you're still there or didn't graduate.</p>
        <Form className='container'>
-       <Form.Group className="mb-3" >
-        <Form.Label>School Name</Form.Label>
-        <Form.Control type="input" placeholder="e.g Leipzig-University" /> 
-      </Form.Group>
-      <Form.Group className="mb-3" >
-        <Form.Label>School Location</Form.Label>
-        <Form.Control type="input" placeholder="e.g Leipzig,Germany" /> 
-      </Form.Group>
-      <Form.Group className="mb-3" >
-      <Form.Label>School Location</Form.Label>
-      <Form.Select aria-label="Default select example">
-      <option>Select menu</option>
-      <option value="1">High school Diploma </option>
-      <option value="2">GED</option>
-      <option value="3">Bachelor of Arts</option>
-      <option value="4">Associate of Arts</option>
-      <option value="5">Associate of Science</option>
-      <option value="6">Associate of Applied Science</option>
-      <option value="7">Bachelor of Science</option>
-      <option value="8">BBA</option>
-      <option value="9">MBA</option>
-      <option value="10">Master of Science</option>
-      <option value="11">J.D</option>
-      <option value="12">M.D</option>
-      <option value="13">Ph.D</option>
-      <option value="14">Enter a different degree</option>
-      <option value="15">No Degree</option>
-    </Form.Select>
-      </Form.Group>
-      <Form.Group className="mb-3" >
-        <Form.Label>Enter a different degree</Form.Label>
-        <Form.Control type="input" placeholder="e.g. Bachelor's" /> 
-      </Form.Group>
-      <Form.Group className="mb-3" >
-        <Form.Label>Field of Study</Form.Label>
-        <Form.Control type="input" placeholder="e.g. Music" /> 
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="formBasicCheckbox">
-        <Form.Check type="checkbox" label="Check me out" />
-      </Form.Group>
-
-      <Form.Group>
+       <div className="firstsecondline">
+           <Form.Group className="mb-3" >
+            <Form.Label>{efo.name}</Form.Label>
+            <Form.Control className='input' type="input" placeholder="e.g Leipzig-University" /> 
+                 </Form.Group>
+                 <Form.Group className="mb-3" >
+            <Form.Label>{efo.location}</Form.Label>
+            <Form.Control className='input' type="input" placeholder="e.g Leipzig,Germany"  /> 
+                 </Form.Group>
+       </div>
+      <div className="firstsecondline">
+          <Form.Group className="mb-3" >
+          <Form.Label>{efo.degree}</Form.Label>
+          <Form.Select className='input' aria-label="Default select example">
+          <option>Select menu</option>
+          {edu.map((item,i)=><option key={i} value={i}>{item}</option>)}
+              </Form.Select>
+          </Form.Group>
+          <Form.Group className="mb-3" >
+            <Form.Label>{efo.enter}</Form.Label>
+            <Form.Control className='input' type="input" placeholder="e.g. Bachelor's" />
+          </Form.Group>
+      </div>
+      <div className='thirdline'>
+          <Form.Group className="mb-3" >
+            <Form.Label>{efo.field}</Form.Label>
+            <Form.Control className='input' type="input" placeholder="e.g. Music" />
+                  </Form.Group>
+          <div className='thirdlinechild'>
+          <label >{efo.start}</label>
+          <input className='input' type="date" />
+          </div>
+          <div className='thirdlinechild'>
+              <label >{efo.end}</label>
+              <input className='input' type="date" />
    
-          <FloatingLabel controlId="floatingTextarea2">
-            <Form.Control
-              as="textarea"
-              placeholder="Leave a comment here"
-              style={{ height: "400px"}}
-            />
-          </FloatingLabel>
-      </Form.Group>
+          </div>
+                  </div>
+          <Form.Group>
+
+              <FloatingLabel controlId="floatingTextarea">
+                <Form.Control
+                  as="textarea"
+                  placeholder="Leave a comment here"
+                  style={{ width:"700px",height: "200px"}}
+                />
+              </FloatingLabel>
+              </Form.Group>
+          <Form.Group className="checkbox" controlId="formBasicCheckbox">
+            <Form.Check type="checkbox" label={efo.check} />
+          </Form.Group>
+    
+
+    
        </Form>
 
-       <div>
-       <Button variant="outline-light" type="submit">
+       <div className='buttons'>
+       <Button className='buttonback' variant="outline-light" type="submit">
         Back
       </Button>
-      <Button variant="outline-danger" type="submit">
+      <Button className='buttonnext'variant="outline-danger" type="submit">
         Next
       </Button>
        </div>
