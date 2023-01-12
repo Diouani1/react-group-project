@@ -5,14 +5,17 @@ import App from "./App";
 import DataOfUser from "./DataOfUser";
 import ImageFileContextProvider from "./context/ImageFileContext";
 import PersonalDetailsContextProvider from "./context/PersonalDetailsContext";
+import { BrowserRouter } from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <DataOfUser>
-    <ImageFileContextProvider>
-    <PersonalDetailsContextProvider>
-      <App />
-      </PersonalDetailsContextProvider>
-    </ImageFileContextProvider>
-  </DataOfUser>
+  <BrowserRouter>
+    <DataOfUser>
+      <ImageFileContextProvider>
+        <PersonalDetailsContextProvider>
+          <App />
+        </PersonalDetailsContextProvider>
+      </ImageFileContextProvider>
+    </DataOfUser>
+  </BrowserRouter>
 );
