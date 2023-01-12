@@ -1,21 +1,13 @@
-import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import HeadingPage from './Component/HeadingPage/HeadingPage';
-import ImageFileContextProvider from './context/ImageFileContext';
-import Main from './Component/Main/Main';
+import "./App.css";
+import Register from "./Component/Register/Register";
+import { DataUeser } from "./DataOfUser";
+import { useContext } from "react";
+import Main from "./Component/Main/Main";
 
 function App() {
-  return (
-    <div className="App">
-   
-    <ImageFileContextProvider>
-      <HeadingPage/>
-    </ImageFileContextProvider>
-    
-    
-    <Main/>
-    </div>
-  );
+  const { user } = useContext(DataUeser);
+
+  return <div className="App">{!user ? <Register /> : <Main />}</div>;
 }
 
 export default App;
