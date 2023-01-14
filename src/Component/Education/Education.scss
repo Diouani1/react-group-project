@@ -1,0 +1,64 @@
+.education {
+  display: flex;
+  flex-direction: column;
+  margin: 3rem;
+  span {
+    color: blue;
+  }
+  .container {
+    .firstsecondline {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: start;
+      gap: 3rem;
+      height: 5rem;
+    }
+
+    .thirdline {
+      display: flex;
+      align-items: center;
+      text-align: start;
+      gap: 2rem;
+      margin: 1rem;
+      justify-content: center;
+      align-items: center;
+      .thirdlinechild {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+    .mb-3 {
+      display: flex;
+      flex-direction: column;
+      width: 20rem;
+    }
+    .input {
+      height: 2rem;
+      border-radius: 10px;
+    }
+  }
+  #floatingTextarea {
+    margin: 2rem;
+    border-radius: 10px;
+  }
+  #formBasicCheckbox {
+  }
+  .buttons {
+    display: flex;
+    justify-content: space-around;
+    button {
+      border-radius: 10px;
+      height: 3rem;
+      width: 6rem;
+    }
+    .buttonback {
+      background-color: blue;
+      color: white;
+    }
+    .buttonnext {
+      background-color: red;
+      color: white;
+    }
+  }
+}
