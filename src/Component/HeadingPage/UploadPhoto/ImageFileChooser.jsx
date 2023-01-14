@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
-import { ImageFileContext } from "context/ImageFileContext";
-import "Component/HeadingPage/UploadPhoto/ImageFileChooser.scss";
+import { ImageFileContext } from "../../../context/ImageFileContext";
+import "./ImageFileChooser.scss";
 
 function ImageFileChooser() {
   const { imageFile, setImageFile } = useContext(ImageFileContext);
