@@ -5,13 +5,16 @@ import App from "./App";
 import DataOfUser from "./DataOfUser";
 import ImageFileContextProvider from "./context/ImageFileContext";
 import PersonalDetailsContextProvider from "./context/PersonalDetailsContext";
+import WorkHistoryContextProvider from "./context/WorkHistoryContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <DataOfUser>
     <ImageFileContextProvider>
     <PersonalDetailsContextProvider>
+      <WorkHistoryContextProvider>
       <App />
+      </WorkHistoryContextProvider>
       </PersonalDetailsContextProvider>
     </ImageFileContextProvider>
   </DataOfUser>

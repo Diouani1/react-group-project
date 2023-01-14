@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
-import { ImageFileContext } from "../../../context/ImageFileContext";
+import { ImageFileContext } from "context/ImageFileContext";
 import "./ImageFilePreviewer.scss";
-import photo from "../../../assets/photo.svg";
+import photo from "assets/photo.svg";
 
 function ImageFilePreviewer() {
   const { imageFile } = useContext(ImageFileContext);
