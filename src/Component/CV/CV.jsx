@@ -11,7 +11,7 @@ const CV = () => {
     <div className="cv">
       <Container fluid>
         <Row className="justify-content-md-center my-4">
-          <Col className="d-flex justify-content-around mx-2" xs="2">
+          <Col className="d-flex justify-content-around mx-2"  xs="2">
             <Button variant="primary"   onClick={()=> {setColor("blue"); console.log("first")}}></Button>{" "}
             <Button variant="secondary" onClick={()=> setColor("grey")}></Button>{" "}
             <Button variant="success"   onClick={()=> setColor("green")}></Button>{" "}
@@ -21,7 +21,7 @@ const CV = () => {
           </Col>
         </Row>
         <Row>
-          <Col className="d-flex flex-column align-items-end mx-2" xs="2">
+          <Col className="d-flex flex-column align-items-end mx-2 style"    xs="2">
             <Button variant="light" onClick={() => diStyle({ type: "style1" })}>
               Style One
             </Button>
@@ -38,15 +38,15 @@ const CV = () => {
               Style Five
             </Button>
           </Col>
-          <Col className="mx-2">
+          <Col className="mx-2" >
             {style}
           </Col>
-          <Col className="d-flex flex-column align-items-start mx-2" xs="2">
-            <Button variant="light">Step One</Button>
-            <Button variant="light">Step Two</Button>
-            <Button variant="light">Step Three</Button>
-            <Button variant="light">Step Four</Button>
-            <Button variant="light">Step Five</Button>
+          <Col className="d-flex flex-column align-items-start mx-2  style" xs="2"  >
+            <Button variant="light" onClick={()=>navigate("/")}>First Step </Button>
+            <Button variant="light" onClick={()=>navigate("/")}>Second Step </Button>
+            <Button variant="light" onClick={()=>navigate("/education")}>Third Step </Button>
+            <Button variant="light" onClick={()=>navigate("/skills")}>Fourth Step </Button>
+            <Button variant="light" onClick={()=>navigate("")}>Funfth Step </Button>
           </Col>
         </Row>
       </Container>
