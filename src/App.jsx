@@ -1,17 +1,13 @@
-import './App.css';
-import Education from './Component/Education/Education';
-import Skills from './Component/Skills/Skills';
+import "./App.css";
+import Register from "./Component/Register/Register";
+import { DataUeser } from "./DataOfUser";
+import { useContext } from "react";
+import Main from "./Component/Main/Main";
 
 function App() {
-  return (
-    <div className="App">
-    
-      <Education/>
-      <hr />
-      <Skills/>
+  const { user } = useContext(DataUeser);
 
-    </div>
-  );
+  return <div className="App">{!user ? <Register /> : <Main />}</div>;
 }
 
 export default App;
