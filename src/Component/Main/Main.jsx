@@ -1,4 +1,3 @@
-import  { useContext } from "react";
 import { Route, Routes } from "react-router-dom";
 import CV from "../CV/CV";
 import HeadingPage from "../HeadingPage/HeadingPage";
@@ -16,6 +15,8 @@ const Main = () => {
         <Route path="education" element={<Education />} />
         <Route path="skills" element={<Skills />} />
         <Route path="cv" element={<CV />} />
+        <Route path="*" element={<HeadingPage />} />
+
       </Routes>
     </div>
   );
