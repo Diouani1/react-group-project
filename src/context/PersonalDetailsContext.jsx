@@ -10,14 +10,14 @@ const PersonalDetailsContextProvider = ({ children }) => {
   };
 
   const initialState = {
-    firstName: "",
-    lastName: "",
-    profession: "",
-    city: "",
-    postalCode: "",
-    country: "",
-    phone: "",
-    email: "",
+    firstName: "FirstName",
+    lastName: "LastName",
+    profession: "Profession",
+    city: "City",
+    postalCode: "1111111",
+    country: "Country",
+    phone: "04900000000000",
+    email: "email@gmail.com",
   };
   const [details, dispatch] = useReducer(reducer, initialState);
   useEffect(() => {

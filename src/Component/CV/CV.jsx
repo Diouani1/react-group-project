@@ -1,96 +1,55 @@
 import "./cv.css";
-import React, { useContext } from "react";
-import { PersonalDetailsContext } from "../../context/PersonalDetailsContext";
+import { useContext } from "react";
+import { Col, Container, Row, Button } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
+import { DataUeser } from "../../DataOfUser";
 const CV = () => {
-  const { details } = useContext(PersonalDetailsContext);
+  const {setColor, style, diStyle } = useContext(DataUeser);
+
+  const navigate = useNavigate();
   return (
     <div className="cv">
-      <div className="sideBar">
-        <div className="titlcv">
-          <img src="" alt="" />
-        </div>
-        <div>
-          <span> Full name</span>
-          <ul>
-            <li>addresse</li>
-            <li>addresse</li>
-            <li>addresse</li>
-            <li>addresse</li>
-            <li>addresse</li>
-          </ul>
-        </div>
-        <div>
-          <span>Language</span>
-          <ul>
-            <li>German</li>
-            <li>German</li>
-            <li>German</li>
-          </ul>
-        </div>
-        <div>
-          <span>Software Skill</span>
-          <ul>
-            <li>word</li>
-            <li>word</li>
-            <li>word</li>
-            <li>word</li>
-          </ul>
-        </div>
-        <div>
-          <span>Personality</span>
-          <ul>
-            <li>organized</li>
-            <li>organized</li>
-            <li>organized</li>
-          </ul>
-        </div>
-      </div>
-      <div className="maincv">
-        <div>
-            <span>Profile</span>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero facilis
-              quod consequuntur laudantium corrupti quidem nemo corporis assumenda,
-              amet esse.
-            </p>
-        </div>
-        <div>
-            <span>Education</span>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex,
-              excepturi.
-            </p>
-        </div>
-        <div>
-            <span>experience</span>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. At, eligendi!
-            </p>
-        </div>
-        <div>
-            <span>skills</span>
-            <ul>
-              <li>Skill</li>
-              <li>Skill</li>
-              <li>Skill</li>
-            </ul>
-        </div>
-        <div>
-            <span>Certificate</span>
-            <ul>
-              <li>
-                <p>Lorem ipsum dolor sit.</p>
-              </li>
-              <li>
-                <p>Lorem ipsum dolor sit.</p>
-              </li>
-              <li>
-                <p>Lorem ipsum dolor sit.</p>
-              </li>
-            </ul>
-        </div>
-        <div><span>Hobboies</span></div>
-      </div>
+      <Container fluid>
+        <Row className="justify-content-md-center my-4">
+          <Col className="d-flex justify-content-around mx-2" xs="2">
+            <Button variant="primary"   onClick={()=> {setColor("blue"); console.log("first")}}></Button>{" "}
+            <Button variant="secondary" onClick={()=> setColor("grey")}></Button>{" "}
+            <Button variant="success"   onClick={()=> setColor("green")}></Button>{" "}
+            <Button variant="warning"   onClick={()=> setColor("yellow")}></Button>{" "}
+            <Button variant="danger"    onClick={()=> setColor("red")}></Button> 
+            <Button variant="info"      onClick={()=> setColor("lightblue")}></Button>{" "}
+          </Col>
+        </Row>
+        <Row>
+          <Col className="d-flex flex-column align-items-end mx-2" xs="2">
+            <Button variant="light" onClick={() => diStyle({ type: "style1" })}>
+              Style One
+            </Button>
+            <Button variant="light" onClick={() => diStyle({ type: "style2" })}>
+              Style Two
+            </Button>
+            <Button variant="light" onClick={() => diStyle({ type: "style3" })}>
+              Style Three
+            </Button>
+            <Button variant="light" onClick={() => diStyle({ type: "style1" })}>
+              Style Four
+            </Button>
+            <Button variant="light" onClick={() => diStyle({ type: "style2" })}>
+              Style Five
+            </Button>
+          </Col>
+          <Col className="mx-2">
+            {style}
+          </Col>
+          <Col className="d-flex flex-column align-items-start mx-2" xs="2">
+            <Button variant="light">Step One</Button>
+            <Button variant="light">Step Two</Button>
+            <Button variant="light">Step Three</Button>
+            <Button variant="light">Step Four</Button>
+            <Button variant="light">Step Five</Button>
+          </Col>
+        </Row>
+      </Container>
     </div>
   );
 };
