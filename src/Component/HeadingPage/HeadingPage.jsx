@@ -1,8 +1,8 @@
 import React from "react";
-import ImageFileChooser from "Component/HeadingPage/UploadPhoto/ImageFileChooser";
-import ImageFilePreviewer from "Component/HeadingPage/UploadPhoto/ImageFilePreviewer";
-import "Component/HeadingPage/HeadingPage.scss";
-import PersonalDetails from "Component/HeadingPage/PersonalDetails";
+import ImageFileChooser from "./UploadPhoto/ImageFileChooser";
+import ImageFilePreviewer from "./UploadPhoto/ImageFilePreviewer";
+import "./HeadingPage.scss";
+import PersonalDetails from "./PersonalDetails";
 import Button from "react-bootstrap/Button";
 import { NavLink } from "react-router-dom";
 import Container from "react-bootstrap/Container";
