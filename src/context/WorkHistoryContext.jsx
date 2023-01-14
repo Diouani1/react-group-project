@@ -12,7 +12,7 @@ const WorkHistoryContextProvider = ({ children }) => {
     employer: "",
     city: "",
     country: "",
-    stateDate: "",
+    startDate: "",
     endDate: "",
   };
 

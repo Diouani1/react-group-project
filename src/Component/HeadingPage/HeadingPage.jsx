@@ -5,23 +5,31 @@ import "Component/HeadingPage/HeadingPage.scss";
 import PersonalDetails from "Component/HeadingPage/PersonalDetails";
 import Button from "react-bootstrap/Button";
 import { NavLink } from "react-router-dom";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
 function HeadingPage() {
   return (
-    <>
-      <div className="container">
-        <div className="photo-preview">
+    <Container>
+      <Row>
+        <Col lg="2" sm={8}>
           <ImageFilePreviewer />
           <ImageFileChooser />
-        </div>
-        <div className="personal-details">
+        </Col>
+        <Col>
           <PersonalDetails />
-        </div>
-      </div>
-      <NavLink to="/workhistory">
-        <Button variant="danger">Next</Button>
-      </NavLink>
-    </>
+        </Col>
+      </Row>
+
+      <Row className="buttons">
+        <Col className="right">
+          <NavLink to="workhistory">
+            <Button variant="danger">Next</Button>
+          </NavLink>
+        </Col>
+      </Row>
+    </Container>
   );
 }
 

@@ -1,10 +1,17 @@
-import React, { createContext, useEffect, useReducer, useRef, useState } from "react";
+import {
+  createContext,
+  useEffect,
+  useReducer,
+  useState,
+} from "react";
+import CvStyle1 from "./Component/CV/CvStyle1/CvStyle1";
+import CvStyle2 from "./Component/CV/CvStyle2/CvStyle2"
+import CvStyle3 from "./Component/CV/CvStyle3/CvStyle3"
 export const DataUeser = createContext();
 const nameOfUser = JSON.parse(localStorage.getItem("user"));
 
-
-
 const DataOfUser = ({ children }) => {
+  const [color, setColor] = useState("blue")
   const [userName, setUserName] = useState();
   const [fullName, setFullName] = useState();
   const [email, setEmail] = useState();
@@ -14,11 +21,23 @@ const DataOfUser = ({ children }) => {
   const [error, setError] = useState();
   const [hiddenPassword, setHiddenPassword] = useState("");
   const [state, dispatch] = useReducer(reducer, {});
+  const [style, diStyle] = useReducer(restyle, <CvStyle1 />);
+  function restyle(prev, action) {
+    if (action.type === "style1") {
+      return <CvStyle1 />;
+    } else if (action.type === "style2") {
+      return <CvStyle2 />;
+    } else if (action.type === "style3") {
+      return <CvStyle3 />;
+    } else {
+      return prev;
+    }
+  }
+  
 
   function reducer(prev, action) {
-    if (action.type === "signup" ) {
+    if (action.type === "signup") {
       if (JSON.parse(localStorage.getItem(userName))) {
-
         setError(`The Username is already exist`);
         return { prev };
       } else {
@@ -34,9 +53,7 @@ const DataOfUser = ({ children }) => {
     }
   }
 
-
   useEffect(() => {
-
     if (!JSON.parse(localStorage.getItem(userName))) {
       localStorage.setItem(userName, JSON.stringify(state));
       setError(null);
@@ -50,6 +67,8 @@ const DataOfUser = ({ children }) => {
   return (
     <DataUeser.Provider
       value={{
+        color, 
+        setColor,
         state,
         dispatch,
         user,
@@ -68,6 +87,9 @@ const DataOfUser = ({ children }) => {
         setError,
         hiddenPassword,
         setHiddenPassword,
+        style, 
+        diStyle
+       
       }}
     >
       {children}
