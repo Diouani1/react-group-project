@@ -13,9 +13,7 @@ const MainHeader = () => {
       }}
     >
       {/*  i use the navlink temporary, the navlink should in component */}
-      <NavLink to="/"><Button>vijaya</Button></NavLink>
-      <NavLink to="education"><Button>ten</Button></NavLink>
-      <NavLink to="skills"><Button>ten</Button></NavLink>
+     
       <NavLink to="cv"><Button>diouani</Button></NavLink>
 
       <Navbar>

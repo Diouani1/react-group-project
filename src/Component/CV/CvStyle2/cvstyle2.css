@@ -1,6 +1,9 @@
 .cvstyle2 {
   padding: 1rem;
 }
+.cvstyle2 ul {
+  padding: 0;
+}
 .cvstyle2 ul li {
   list-style: none;
 }
@@ -31,7 +34,7 @@
   border: none;
 }
 
-.titlcv2 .preview .photo{
+.titlcv2 .preview .photo {
   width: 11rem;
   height: 11rem;
   border-radius: 50%;
@@ -43,4 +46,4 @@
   flex-wrap: wrap;
   justify-content: space-evenly;
   gap: 1rem;
-} 
+}
