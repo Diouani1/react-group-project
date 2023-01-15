@@ -4,7 +4,7 @@
   margin: auto;
   padding: 1rem;
 }
-.cvstyle1 ul li{
+.cvstyle1 ul li {
   list-style: none;
 }
 .sideBar1 {
@@ -17,8 +17,14 @@
   padding-right: 1rem;
   gap: 1rem;
 }
+.sideBar1 div ul {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
 .sideBar1 span {
   color: white;
+  text-align: end;
 }
 
 .titlcv1 img {

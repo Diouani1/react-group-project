@@ -1,10 +1,9 @@
-
-.style{
-    padding-top: 10%;
+.style {
+  padding-top: 10%;
 }
 
-.style button{
-
-margin-top: 1rem;
-
+.style button {
+  margin-top: 1rem;
+  width: 150px;
+  background-color: rgba(0, 0, 0, 0.823);
 }
