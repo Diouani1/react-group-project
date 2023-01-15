@@ -16,11 +16,16 @@ start:"Graduation Start Date",
 end:"Graduation End Date"
 }
 
+const lis=["Good Telephone Etiquette","Critical Thinking","Dependable and Responsible","Clerical Support","Self-Motivated","Written Communication","Interpersonal Communication","MS Office","Training and Development","Multitasking Abilities","Google Workspace","Flexible and Adaptable","Teambuilding","Planning and Coordination","First Aid/CPR","Active Listening","G-Suite","Data Entry","Teamwork and Collaboration","Attention to Detail"]
 
+const liButton={add:"ADD",
+checked:"✔"
+
+}
 
 
     return (
-        <EduSkillContext.Provider value={{edu,efo}}>
+        <EduSkillContext.Provider value={{edu,efo,lis,liButton}}>
             {children}
         </EduSkillContext.Provider>
     )

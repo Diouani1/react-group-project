@@ -1,7 +1,13 @@
 import "./Skills.scss"
 import React from 'react'
-import { Container,Form,Button,ListGroup} from "react-bootstrap"
+import { Container,Form,Button,ListGroup, ButtonGroup} from "react-bootstrap"
+import { useContext } from "react"
+import  { EduSkillContext } from "../EduSkillContext/EduSkillContext"
+
 const Skills = () => {
+    const {lis,liButton}=useContext(EduSkillContext)
+    console.log(lis.length, liButton);
+
 
   return (
     <div className="skills">
@@ -13,22 +19,47 @@ const Skills = () => {
               className="me-2"
               aria-label="Search"
             />
-            <Button variant="outline-success">Search</Button>
+            <Button variant="outline-success" style={{height:"2rem",backgroundColor:"blue",color:"white", borderRadius:"10px"}}>Search</Button>
           </Form>
 
           <ListGroup as="ol" numbered>
-      <ListGroup.Item
+            {lis.map((item,i)=> <ListGroup.Item
+        // as="li" 
+        key={i}
+        className="lists"
+        > 
+        <li>{item}</li>
+        <Button variant="outline-info">{liButton.add}</Button>
+
+      </ListGroup.Item> )}
+      {/* <ListGroup.Item
         as="li"
         className="d-flex justify-content-between align-items-start"
-      >
+      > <Button variant="outline-info">Info</Button>
         <div className="ms-2 me-auto">
           <div className="fw-bold">Subheading</div>
-          Cras justo odio
+        
         </div>
-      </ListGroup.Item> 
+      </ListGroup.Item>  */}
       </ListGroup>
         </Container> 
-       <Container className="right"></Container> 
+       <Container className="right">
+        
+            <h1><span>Highlight your skills</span></h1>
+
+            <div className="addingarea"></div>
+
+            
+            <ButtonGroup className='buttons'>
+       <Button className='backbutton' variant="outline-light" type="submit">
+        Back
+      </Button>
+      <Button className='nextbutton'variant="outline-danger" type="submit">
+        Next
+      </Button>
+       </ButtonGroup>
+        
+        </Container> 
     </div>
   )
 }
