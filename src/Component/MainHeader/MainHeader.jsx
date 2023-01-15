@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import {  Button, Navbar } from "react-bootstrap";
+import { Button, Navbar } from "react-bootstrap";
 import { DataUeser } from "../../DataOfUser";
 import { NavLink } from "react-router-dom";
 const MainHeader = () => {
@@ -13,8 +13,9 @@ const MainHeader = () => {
       }}
     >
       {/*  i use the navlink temporary, the navlink should in component */}
-     
-      <NavLink to="cv"><Button>diouani</Button></NavLink>
+      <NavLink to="cv">
+        <Button>diouani</Button>
+      </NavLink>
 
       <Navbar>
         <Navbar.Brand>{user}</Navbar.Brand>
