@@ -3,6 +3,8 @@ import { createContext, useEffect, useReducer } from "react";
 export const PersonalDetailsContext = createContext(null);
 
 const PersonalDetailsContextProvider = ({ children }) => {
+
+  
   const reducer = (details, action) => {
     return { ...details, ...action };
   };
@@ -23,7 +25,7 @@ const PersonalDetailsContextProvider = ({ children }) => {
   }, [details]);
 
   return (
-    <PersonalDetailsContext.Provider value={{ details, dispatch }}>
+    <PersonalDetailsContext.Provider value={{ details, dispatch}}>
       {children}
     </PersonalDetailsContext.Provider>
   );

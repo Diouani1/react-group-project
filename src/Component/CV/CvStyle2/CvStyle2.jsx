@@ -6,7 +6,8 @@ import ImageFilePreviewer from "../../HeadingPage/UploadPhoto/ImageFilePreviewer
 import { WorkHistoryContext } from "../../../context/WorkHistoryContext";
 
 const CvStyle2 = () => {
-  const { details } = useContext(PersonalDetailsContext);
+
+  const { details} = useContext(PersonalDetailsContext);
   const { color } = useContext(DataUeser);
   const { state } = useContext(WorkHistoryContext);
 
