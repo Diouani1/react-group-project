@@ -6,6 +6,7 @@ import Education from "../Education/Education";
 import Skills from "../Skills/Skills";
 import WorkHistory from "../WorkHistory/WorkHistory";
 import Language from "Component/Language/Language";
+import Personalit from "Component/Personality/Personalit"
 const Main = () => {
   return (
     <div>
@@ -16,6 +17,7 @@ const Main = () => {
         <Route path="education" element={<Education />} />
         <Route path="skills" element={<Skills />} />
         <Route path="language" element={<Language />} />
+        <Route path="personality" element={<Personalit/>} />
         <Route path="cv" element={<CV />} />
         <Route path="*" element={<HeadingPage />} />
       </Routes>
