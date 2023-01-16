@@ -1,0 +1,49 @@
+.cvstyle1 {
+  display: flex;
+  min-height: 70vh;
+  margin: auto;
+  padding: 1rem;
+}
+.cvstyle1 ul li {
+  list-style: none;
+}
+.sideBar1 {
+  width: 40%;
+  height: 90%;
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-right: 1rem;
+  gap: 1rem;
+}
+.sideBar1 div ul {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.sideBar1 span {
+  color: white;
+  text-align: end;
+}
+
+.titlcv1 img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+}
+.sideBar1 div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.maincv1 {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+span {
+  font-size: 1.5rem;
+}
