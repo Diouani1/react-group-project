@@ -23,14 +23,14 @@ function WorkHistory() {
 
         <Form>
           <Row className="mb-3">
-            <Form.Group as={Col} sm>
+            <Form.Group as={Col} sm={12} md={12} lg={6}>
               <Form.Label>Job Title</Form.Label>
               <Form.Control
                 onChange={(e) => dispatch({ jobTitle: e.target.value })}
               />
             </Form.Group>
 
-            <Form.Group as={Col} sm>
+            <Form.Group as={Col} sm={12} md={12} lg={6}>
               <Form.Label>Employer</Form.Label>
               <Form.Control
                 onChange={(e) => dispatch({ employer: e.target.value })}
@@ -38,14 +38,14 @@ function WorkHistory() {
             </Form.Group>
           </Row>
           <Row className="mb-3">
-            <Form.Group as={Col} sm>
+            <Form.Group as={Col} sm={12} md={12} lg={6}>
               <Form.Label>City</Form.Label>
               <Form.Control
                 onChange={(e) => dispatch({ city: e.target.value })}
               />
             </Form.Group>
 
-            <Form.Group as={Col} sm>
+            <Form.Group as={Col} sm={12} md={12} lg={6}>
               <Form.Label>Country</Form.Label>
               <Form.Control
                 onChange={(e) => dispatch({ country: e.target.value })}
@@ -53,7 +53,7 @@ function WorkHistory() {
             </Form.Group>
           </Row>
           <Row className="mb-3">
-            <Form.Group as={Col} sm>
+            <Form.Group as={Col} sm={12} md={12} lg={6}>
               <Form.Label>Start Date</Form.Label>
               <Form.Control
                 type="date"
@@ -63,7 +63,7 @@ function WorkHistory() {
               />
             </Form.Group>
 
-            <Form.Group as={Col} sm>
+            <Form.Group as={Col} sm={12} md={12} lg={6}>
               <Form.Label>End Date</Form.Label>
               <Form.Control
                 type="date"
