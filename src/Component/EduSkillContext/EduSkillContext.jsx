@@ -54,7 +54,7 @@ export default function EduSkillProvider({ children }) {
     "Attention to Detail",
   ];
 
-  const liButton = { add: "ADD", checked: "✔" };
+  const liButton = { add: "ADD", checked: "✔", deleted: "✘" };
   const [buttons, setButtons] = useState(liButton.add);
 
   const [education, setEducation] = useState("");

@@ -4,11 +4,9 @@
   .left {
     width: 40%;
     overflow: scroll;
-    // background-color: rebeccapurple;
+
     .me-2 {
-      // padding: 1rem;
-      // height: 2rem;
-      // border-radius: 10px;
+      border-radius: 10px;
     }
     .lists {
       display: flex;
@@ -35,6 +33,25 @@
     width: 75%;
     h1 {
       text-align: center;
+    }
+
+    .mainskills {
+      margin: 1rem;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      .skillitem {
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        li {
+          list-style: none;
+          margin: auto;
+        }
+      }
     }
     .buttons {
       display: flex;

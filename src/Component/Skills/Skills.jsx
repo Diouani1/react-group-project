@@ -61,6 +61,13 @@ const Skills = () => {
         <h1>
           <span>Highlight your skills</span>
         </h1>
+        <div className="mainskills">
+          <ListGroup.Item className="skillitem">
+            <li>Singing</li>
+
+            <Button variant="outline-info">{liButton.deleted}</Button>
+          </ListGroup.Item>
+        </div>
 
         <div className="addingarea"></div>
 
