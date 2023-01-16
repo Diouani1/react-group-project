@@ -2,17 +2,17 @@
   width: 100vw;
   display: flex;
   .left {
-    width: 25%;
+    width: 40%;
     overflow: scroll;
-    background-color: rebeccapurple;
+    // background-color: rebeccapurple;
     .me-2 {
-      margin-top: 1rem;
-      height: 2rem;
-      border-radius: 10px;
+      // padding: 1rem;
+      // height: 2rem;
+      // border-radius: 10px;
     }
     .lists {
       display: flex;
-      gap: 2rem;
+
       list-style: none;
       justify-content: space-between;
       align-items: center;
@@ -35,6 +35,23 @@
     width: 75%;
     h1 {
       text-align: center;
+    }
+    .buttons {
+      display: flex;
+      justify-content: space-around;
+      button {
+        border-radius: 10px;
+        height: 3rem;
+        width: 6rem;
+      }
+      .backbutton {
+        background-color: blue;
+        color: white;
+      }
+      .nextbutton {
+        background-color: red;
+        color: white;
+      }
     }
   }
 }

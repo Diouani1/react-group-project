@@ -13,28 +13,26 @@ import { NavLink } from "react-router-dom";
 
 const Skills = () => {
   const { lis, liButton, buttons, setButtons } = useContext(EduSkillContext);
-  console.log(lis.length, liButton);
+  const addedList = () => {};
+  function addHandler(props) {
+    console.log(props);
+    setButtons(liButton.checked);
+    buttons(liButton.add);
+  }
 
   return (
     <div className="skills">
       <Container className="left">
+        <h6>Add skill</h6>
         <Form className="d-flex">
           <Form.Control
-            type="search"
-            placeholder="Search"
+            type="input"
+            placeholder="Enter a skill"
             className="me-2"
             aria-label="Search"
           />
-          <Button
-            variant="outline-success"
-            style={{
-              height: "2rem",
-              backgroundColor: "blue",
-              color: "white",
-              borderRadius: "10px",
-            }}
-          >
-            Search
+          <Button onClick={() => {}} variant="danger">
+            ADD
           </Button>
         </Form>
 
@@ -44,12 +42,12 @@ const Skills = () => {
               // as="li"
               key={i}
               className="lists"
+              style={{ width: "100%" }}
             >
               <li>{item}</li>
               <Button
                 onClick={() => {
-                  setButtons(liButton.checked);
-                  buttons(liButton.add);
+                  addHandler(item);
                 }}
                 variant="outline-info"
               >
@@ -68,15 +66,11 @@ const Skills = () => {
 
         <ButtonGroup className="buttons">
           <NavLink to="/education">
-            <Button
-              className="backbutton"
-              variant="outline-light"
-              type="submit"
-            >
+            <Button className="backbutton" variant="outline-dark" type="submit">
               Back
             </Button>
           </NavLink>
-          <NavLink to="language">
+          <NavLink to="/language">
             <Button
               className="nextbutton"
               variant="outline-danger"
