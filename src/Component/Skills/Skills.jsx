@@ -1,38 +1,54 @@
-import "./Skills.scss"
-import React from 'react'
-import { Container,Form,Button,ListGroup, ButtonGroup} from "react-bootstrap"
-import { useContext } from "react"
-import  { EduSkillContext } from "../EduSkillContext/EduSkillContext"
+import "./Skills.scss";
+import React from "react";
+import {
+  Container,
+  Form,
+  Button,
+  ListGroup,
+  ButtonGroup,
+} from "react-bootstrap";
+import { useContext } from "react";
+import { EduSkillContext } from "../EduSkillContext/EduSkillContext";
 
 const Skills = () => {
-    const {lis,liButton}=useContext(EduSkillContext)
-    console.log(lis.length, liButton);
-
+  const { lis, liButton } = useContext(EduSkillContext);
+  console.log(lis.length, liButton);
 
   return (
     <div className="skills">
-       <Container className="left">
-       <Form className="d-flex">
-            <Form.Control
-              type="search"
-              placeholder="Search"
-              className="me-2"
-              aria-label="Search"
-            />
-            <Button variant="outline-success" style={{height:"2rem",backgroundColor:"blue",color:"white", borderRadius:"10px"}}>Search</Button>
-          </Form>
+      <Container className="left">
+        <Form className="d-flex">
+          <Form.Control
+            type="search"
+            placeholder="Search"
+            className="me-2"
+            aria-label="Search"
+          />
+          <Button
+            variant="outline-success"
+            style={{
+              height: "2rem",
+              backgroundColor: "blue",
+              color: "white",
+              borderRadius: "10px",
+            }}
+          >
+            Search
+          </Button>
+        </Form>
 
-          <ListGroup as="ol" numbered>
-            {lis.map((item,i)=> <ListGroup.Item
-        // as="li" 
-        key={i}
-        className="lists"
-        > 
-        <li>{item}</li>
-        <Button variant="outline-info">{liButton.add}</Button>
-
-      </ListGroup.Item> )}
-      {/* <ListGroup.Item
+        <ListGroup as="ol" numbered>
+          {lis.map((item, i) => (
+            <ListGroup.Item
+              // as="li"
+              key={i}
+              className="lists"
+            >
+              <li>{item}</li>
+              <Button variant="outline-info">{liButton.add}</Button>
+            </ListGroup.Item>
+          ))}
+          {/* <ListGroup.Item
         as="li"
         className="d-flex justify-content-between align-items-start"
       > <Button variant="outline-info">Info</Button>
@@ -41,27 +57,26 @@ const Skills = () => {
         
         </div>
       </ListGroup.Item>  */}
-      </ListGroup>
-        </Container> 
-       <Container className="right">
-        
-            <h1><span>Highlight your skills</span></h1>
+        </ListGroup>
+      </Container>
+      <Container className="right">
+        <h1>
+          <span>Highlight your skills</span>
+        </h1>
 
-            <div className="addingarea"></div>
+        <div className="addingarea"></div>
 
-            
-            <ButtonGroup className='buttons'>
-       <Button className='backbutton' variant="outline-light" type="submit">
-        Back
-      </Button>
-      <Button className='nextbutton'variant="outline-danger" type="submit">
-        Next
-      </Button>
-       </ButtonGroup>
-        
-        </Container> 
+        <ButtonGroup className="buttons">
+          <Button className="backbutton" variant="light" type="submit">
+            Back
+          </Button>
+          <Button className="nextbutton" variant="danger" type="submit">
+            Next
+          </Button>
+        </ButtonGroup>
+      </Container>
     </div>
-  )
-}
+  );
+};
 
-export default Skills
+export default Skills;
