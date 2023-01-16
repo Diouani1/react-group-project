@@ -1,0 +1,39 @@
+.skills {
+  width: 100%;
+  display: flex;
+  .left {
+    width: 25%;
+    overflow: scroll;
+    background-color: rebeccapurple;
+    .me-2 {
+      margin-top: 1rem;
+      height: 2rem;
+      border-radius: 10px;
+    }
+    .lists {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      justify-content: space-between;
+      align-items: center;
+      background-color: aqua;
+      width: 20rem;
+      padding: 0 2rem;
+      li {
+        padding: 1rem 0.5rem;
+      }
+      button {
+        height: 2rem;
+        background-color: blue;
+        color: white;
+        border-radius: 10px;
+      }
+    }
+  }
+  .right {
+    width: 75%;
+    h1 {
+      text-align: center;
+    }
+  }
+}
