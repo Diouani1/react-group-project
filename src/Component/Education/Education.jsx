@@ -6,6 +6,7 @@ import { NavLink } from "react-router-dom";
 
 const Education = () => {
   const { edu, efo } = useContext(EduSkillContext);
+
   return (
     <div className="education">
       <h1>
