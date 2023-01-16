@@ -6,7 +6,6 @@
   list-style: none;
 }
 .sideBar1 {
-  width: 40%;
   min-height: 100%;
   padding: 1rem;
   text-align: end;
@@ -40,7 +39,6 @@
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  width: 73%;
   overflow-wrap: break-word;
 }
 span {
