@@ -7,6 +7,7 @@ import "./Education.scss"
 import { EduSkillContext } from '../EduSkillContext/EduSkillContext'
 
 const Education = () => {
+
     const{edu,efo,setEducation}=useContext(EduSkillContext)
 
     function submitHandler(e){
