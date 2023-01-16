@@ -1,0 +1,19 @@
+{
+  "editor.renderWhitespace": "all",
+  "editor.rulers": [
+    {
+      "column": 80,
+      "color": "#ff99003b"
+    }
+  ],
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": "active",
+  "html.format.enable": false,
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.tabSize": 2,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "javascript.preferences.importModuleSpecifier": "non-relative",
+  "window.title": "${dirty}${activeEditorMedium}${separator}${rootName}${separator}${appName}"
+}

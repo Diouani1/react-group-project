@@ -1,0 +1,15 @@
+.preview {
+  width: 10rem;
+  height: 12rem;
+  border: 1px solid #808080;
+}
+
+.photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.photo.icon {
+  // background-image: linear-gradient(#6c3cb4,gray,#6ebaff);
+}
