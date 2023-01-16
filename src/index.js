@@ -3,11 +3,12 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import DataOfUser from "./DataOfUser";
-import ImageFileContextProvider from "./context/ImageFileContext";
-import PersonalDetailsContextProvider from "./context/PersonalDetailsContext";
+import ImageFileContextProvider from "context/ImageFileContext";
+import PersonalDetailsContextProvider from "context/PersonalDetailsContext";
 import { BrowserRouter } from "react-router-dom";
 import EduSkillProvider from "./Component/EduSkillContext/EduSkillContext";
-import WorkHistoryContextProvider from "./context/WorkHistoryContext";
+import WorkHistoryContextProvider from "context/WorkHistoryContext";
+import PrintPdfContextProvider from "context/PrintPdfContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -17,7 +18,9 @@ root.render(
         <PersonalDetailsContextProvider>
           <EduSkillProvider>
             <WorkHistoryContextProvider>
+              <PrintPdfContextProvider>
               <App />
+              </PrintPdfContextProvider>
             </WorkHistoryContextProvider>
           </EduSkillProvider>
         </PersonalDetailsContextProvider>

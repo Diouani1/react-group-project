@@ -3,8 +3,11 @@ import { useContext } from "react";
 import { Col, Container, Row, Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { DataUeser } from "../../DataOfUser";
+import { PrintPdfContext } from "context/PrintPdfContext";
 const CV = () => {
   const { setColor, style, diStyle } = useContext(DataUeser);
+
+  const { printPdfRef, handlePrint } = useContext(PrintPdfContext);
 
   const navigate = useNavigate();
   return (
@@ -56,7 +59,16 @@ const CV = () => {
               Style Five
             </Button>
           </Col>
-          <Col className="mx-2">{style}</Col>
+
+          <Col className="mx-2">
+            <div
+              ref={printPdfRef}
+              style={{ width: "100%", height: window.innerHeight }}
+            >
+              {style}
+            </div>
+          </Col>
+
           <Col
             className="d-flex flex-column align-items-start mx-2  style"
             xs="2"
@@ -75,6 +87,9 @@ const CV = () => {
             </Button>
             <Button variant="success" onClick={() => navigate("")}>
               Funfth Step{" "}
+            </Button>
+            <Button variant="primary" onClick={handlePrint}>
+              Print this out
             </Button>
           </Col>
         </Row>
