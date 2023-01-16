@@ -1,4 +1,4 @@
-import { createContext} from "react";
+import { createContext, useState} from "react";
 
 export const EduSkillContext=createContext()
 
@@ -23,9 +23,10 @@ checked:"✔"
 
 }
 
+const [education,setEducation]=useState("")
 
     return (
-        <EduSkillContext.Provider value={{edu,efo,lis,liButton}}>
+        <EduSkillContext.Provider value={{edu,efo,lis,liButton, education,setEducation}}>
             {children}
         </EduSkillContext.Provider>
     )

@@ -1,11 +1,21 @@
 
 import { Form,Button,FloatingLabel} from 'react-bootstrap'
+import {NavLink} from "react-router-dom"
 import { useContext } from 'react'
 import "./Education.scss"
 import { EduSkillContext } from '../EduSkillContext/EduSkillContext'
 
 const Education = () => {
-    const{edu,efo}=useContext(EduSkillContext)
+    const{edu,efo,setEducation}=useContext(EduSkillContext)
+
+    function submitHandler(e){
+        e.preventDefault()
+        setEducation(e.target.input.value)
+
+
+    }
+
+    
   return (
     <div className='education'>
         <h1><span>Tell us about your education</span></h1>
@@ -25,7 +35,7 @@ const Education = () => {
           <Form.Group className="mb-3" >
           <Form.Label>{efo.degree}</Form.Label>
           <Form.Select className='input' aria-label="Default select example">
-          <option>Select menu</option>
+          <option>Select a Degree</option>
           {edu.map((item,i)=><option key={i} value={i}>{item}</option>)}
               </Form.Select>
           </Form.Group>
@@ -63,17 +73,21 @@ const Education = () => {
             <Form.Check type="checkbox" label={efo.check} />
           </Form.Group>
     
-
-    
        </Form>
 
+    
+
        <div className='buttons'>
-       <Button className='buttonback' variant="outline-light" type="submit">
-        Back
-      </Button>
-      <Button className='buttonnext'variant="outline-danger" type="submit">
-        Next
-      </Button>
+       <NavLink to="/workhistory">
+           <Button  className='buttonback' variant="outline-light" type="submit">
+            Back
+                 </Button>
+       </NavLink>
+      <NavLink to="/skills">
+          <Button onSubmit={submitHandler} className='buttonnext'variant="outline-danger" type="submit">
+            Next
+          </Button>
+      </NavLink>
        </div>
     </div>
   )

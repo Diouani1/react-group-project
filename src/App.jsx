@@ -6,9 +6,11 @@ function App() {
   return (
     <div className="App">
     
-      <Education/>
-      <hr />
-      <Skills/>
+      {/* <Routers> */}
+        <Education/>
+        <hr />
+        <Skills/>
+      {/* </Routers> */}
 
     </div>
   );
