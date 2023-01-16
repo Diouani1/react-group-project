@@ -13,7 +13,12 @@ function HeadingPage() {
   return (
     <Container>
       <Row>
-        <Col lg="2" sm={8}>
+        <Col
+          lg={2}
+          sm={12}
+          md={3}
+          className="d-flex flex-column align-items-center"
+        >
           <ImageFilePreviewer />
           <ImageFileChooser />
         </Col>
