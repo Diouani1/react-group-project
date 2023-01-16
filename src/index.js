@@ -8,6 +8,7 @@ import PersonalDetailsContextProvider from "./context/PersonalDetailsContext";
 import { BrowserRouter } from "react-router-dom";
 import EduSkillProvider from "./Component/EduSkillContext/EduSkillContext";
 import WorkHistoryContextProvider from "./context/WorkHistoryContext";
+import LanguageContext from "context/LanguageContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -17,7 +18,9 @@ root.render(
         <PersonalDetailsContextProvider>
           <EduSkillProvider>
             <WorkHistoryContextProvider>
-              <App />
+              <LanguageContext>
+                <App />
+              </LanguageContext>
             </WorkHistoryContextProvider>
           </EduSkillProvider>
         </PersonalDetailsContextProvider>
