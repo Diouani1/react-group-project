@@ -5,7 +5,9 @@ import { useContext } from "react";
 import Main from "./Component/Main/Main";
 
 function App() {
+
   const { user } = useContext(DataUeser);
+
 
   return <div className="App">{!user ? <Register /> : <Main />}</div>;
 }

@@ -1,11 +1,24 @@
-import { Form, Button, FloatingLabel } from "react-bootstrap";
-import { useContext } from "react";
-import "./Education.scss";
-import { EduSkillContext } from "../EduSkillContext/EduSkillContext";
-import { NavLink } from "react-router-dom";
+
+
+import { Form,Button,FloatingLabel} from 'react-bootstrap'
+import {NavLink} from "react-router-dom"
+import { useContext } from 'react'
+import "./Education.scss"
+import { EduSkillContext } from '../EduSkillContext/EduSkillContext'
 
 const Education = () => {
-  const { edu, efo } = useContext(EduSkillContext);
+    const{edu,efo,setEducation}=useContext(EduSkillContext)
+
+    function submitHandler(e){
+        e.preventDefault()
+        setEducation(e.target.input.value)
+
+
+    }
+
+    
+
+
   return (
     <div className="education">
       <h1>
@@ -26,24 +39,18 @@ const Education = () => {
           </Form.Group>
           <Form.Group className="mb-3">
             <Form.Label>{efo.location}</Form.Label>
-            <Form.Control
-              className="input"
-              type="input"
-              placeholder="e.g Leipzig,Germany"
-            />
-          </Form.Group>
-        </div>
-        <div className="firstsecondline">
-          <Form.Group className="mb-3">
-            <Form.Label>{efo.degree}</Form.Label>
-            <Form.Select className="input" aria-label="Default select example">
-              <option>Select menu</option>
-              {edu.map((item, i) => (
-                <option key={i} value={i}>
-                  {item}
-                </option>
-              ))}
-            </Form.Select>
+
+            <Form.Control className='input' type="input" placeholder="e.g Leipzig,Germany"  /> 
+                 </Form.Group>
+       </div>
+      <div className="firstsecondline">
+          <Form.Group className="mb-3" >
+          <Form.Label>{efo.degree}</Form.Label>
+          <Form.Select className='input' aria-label="Default select example">
+          <option>Select a Degree</option>
+          {edu.map((item,i)=><option key={i} value={i}>{item}</option>)}
+
+
           </Form.Group>
           <Form.Group className="mb-3">
             <Form.Label>{efo.enter}</Form.Label>
@@ -86,6 +93,7 @@ const Education = () => {
         </Form.Group>
       </Form>
 
+
       <div className="buttons">
         <NavLink to="/workhistory">
           <Button className="buttonback" variant="outline-light" type="submit">
@@ -98,6 +106,7 @@ const Education = () => {
           </Button>
         </NavLink>
       </div>
+
     </div>
   );
 };

@@ -1,14 +1,13 @@
-import "./Skills.scss";
-import React from "react";
-import {
-  Container,
-  Form,
-  Button,
-  ListGroup,
-  ButtonGroup,
-} from "react-bootstrap";
-import { useContext } from "react";
-import { EduSkillContext } from "../EduSkillContext/EduSkillContext";
+
+import "./Skills.scss"
+import React from 'react'
+import { Container,Form,Button,ListGroup, ButtonGroup} from "react-bootstrap"
+import { useContext } from "react"
+import  { EduSkillContext } from "../EduSkillContext/EduSkillContext"
+import {NavLink} from "react-router-dom"
+
+
+
 
 const Skills = () => {
   const { lis, liButton } = useContext(EduSkillContext);
@@ -66,15 +65,23 @@ const Skills = () => {
 
         <div className="addingarea"></div>
 
-        <ButtonGroup className="buttons">
-          <Button className="backbutton" variant="light" type="submit">
+            
+            <ButtonGroup className='buttons'>
+       <NavLink to="/education">
+           <Button className='backbutton' variant="outline-light" type="submit">
             Back
-          </Button>
-          <Button className="nextbutton" variant="danger" type="submit">
+                 </Button>
+       </NavLink>
+      <NavLink to="/languages">
+          <Button className='nextbutton'variant="outline-danger" type="submit">
             Next
           </Button>
-        </ButtonGroup>
-      </Container>
+      </NavLink>
+       </ButtonGroup>
+        
+
+     
+
     </div>
   );
 };
