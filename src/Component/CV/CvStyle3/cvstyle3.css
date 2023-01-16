@@ -9,12 +9,11 @@
   list-style: none;
 }
 .sideBar3 {
-  width: 40%;
   min-height: 100%;
   padding-top: 1rem;
   display: flex;
   flex-direction: column;
-  padding-left: 1rem;
+  padding: 1rem;
   gap: 2rem;
 }
 .sideBar3 span {
@@ -29,7 +28,6 @@
 }
 
 .maincv3 {
-  width: 73%;
   padding: 1rem;
   display: flex;
   flex-direction: column;
@@ -42,7 +40,6 @@ span {
 .sideBar3 .language .row1 {
   display: flex;
   justify-content: space-between;
-  padding-right: 0.5rem;
 }
 .sideBar3 .language .row1 .col1 {
   font-size: 0.8rem;
