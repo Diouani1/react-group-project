@@ -16,6 +16,7 @@ import PrintPdfContextProvider from "context/PrintPdfContext";
 
 import WorkHistoryContextProvider from "./context/WorkHistoryContext";
 import LanguageContext from "context/LanguageContext";
+import PersonalityContextProvider from "context/PersonalityContext"
 
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -28,11 +29,19 @@ root.render(
         <PersonalDetailsContextProvider>
           <EduSkillProvider>
             <WorkHistoryContextProvider>
+
+             
+                <PersonalityContextProvider>
+             
+               
+             
+
               <PrintPdfContextProvide>
                <LanguageContext>
                 <App />
                </LanguageContext>
               </PrintPdfContextProvi>
+
             </WorkHistoryContextProvider>
           </EduSkillProvider>
         </PersonalDetailsContextProvider>

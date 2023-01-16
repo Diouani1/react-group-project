@@ -1,8 +1,9 @@
-import { createContext, useEffect, useReducer } from "react";
+import { createContext, useEffect,useReducer } from "react";
 
 export const LanguageData = createContext(null);
 
 const LanguageContext = ({ children }) => {
+ 
   const reducer = (prev, action) => {
     return { ...prev, ...action };
   };
