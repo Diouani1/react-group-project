@@ -5,6 +5,7 @@ import "./Education.scss";
 import { EduSkillContext } from "../EduSkillContext/EduSkillContext";
 
 const Education = () => {
+
   const { edu, efo, education, setEducation, state, dispatch } =
     useContext(EduSkillContext);
   console.log(state);
@@ -13,6 +14,7 @@ const Education = () => {
   //   setEducation(e.target.value);
   //   console.log(e.target.value);
   // }
+
 
   return (
     <div className="education">
@@ -39,19 +41,23 @@ const Education = () => {
             <Form.Control
               className="input"
               type="input"
+
               placeholder="e.g.Leipzig,Germany"
               onChange={(e) => dispatch({ location: e.target.value })}
+
             />
           </Form.Group>
         </div>
         <div className="firstsecondline">
           <Form.Group className="mb-3">
             <Form.Label>{efo.degree}</Form.Label>
+
             <Form.Select
               className="input"
               aria-label="Default select example"
               onChange={(e) => dispatch({ degree: e.target.value })}
             >
+
               <option>Select a Degree</option>
               {edu.map((item, i) => (
                 <option key={i} value={i}>
@@ -108,6 +114,7 @@ const Education = () => {
           </FloatingLabel>
         </Form.Group>
       </Form>
+
       <div className="buttons">
         <NavLink to="/workhistory">
           <Button className="buttonback" variant="outline-light" type="submit">

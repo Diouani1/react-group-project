@@ -1,12 +1,15 @@
 import { useContext } from "react";
 import { Form, Button, FormControl } from "react-bootstrap";
 import { LanguageData } from "../../context/LanguageContext";
+import {NavLink} from "react-router-dom"
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
 
 const Language = () => {
   const { setlanguage } = useContext(LanguageData);
 
   return (
-    <div>
+    <div className="container">
       <Form
         style={{
           width: "60%",
@@ -87,17 +90,20 @@ const Language = () => {
         </Form.Group>
       </Form>
 
-      <div
-        style={{
-          width: "70%",
-          margin: "auto",
-          display: "Flex",
-          justifyContent: "space-between",
-        }}
-      >
-        <Button variant="primary">Back</Button>
-        <Button variant="danger">Next</Button>
-      </div>
+      
+       <Row className="buttons">
+            <Col className="left">
+              <NavLink to="/skills">
+                <Button variant="primary">Back</Button>
+              </NavLink>
+            </Col>
+            <Col className="right">
+              <NavLink to="/personality">
+                <Button variant="danger">Next</Button>
+              </NavLink>
+            </Col>
+          </Row>
+     
     </div>
   );
 };

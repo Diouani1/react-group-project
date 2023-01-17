@@ -65,15 +65,19 @@ const Skills = () => {
           <ListGroup.Item className="skillitem">
             <li>Singing</li>
 
+
             <Button variant="outline-info">{liButton.deleted}</Button>
           </ListGroup.Item>
         </div>
+
 
         <div className="addingarea"></div>
 
         <ButtonGroup className="buttons">
           <NavLink to="/education">
+
             <Button className="backbutton" variant="outline-dark" type="submit">
+
               Back
             </Button>
           </NavLink>
