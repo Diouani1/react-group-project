@@ -15,7 +15,8 @@
 }
 .sideBar2 .div .row1 {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
+  gap: 0.5rem;
 }
 .sideBar2 .div .row1 .col1 {
   font-size: 1rem;

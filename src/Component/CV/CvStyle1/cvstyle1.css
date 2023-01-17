@@ -51,7 +51,8 @@ span {
 
 .sideBar1 .div .row1 {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
+  gap: 0.5rem;
 }
 .sideBar1 .div .row1 .col1 {
   font-size: 0.8rem;
