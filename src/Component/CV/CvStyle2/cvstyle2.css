@@ -10,14 +10,14 @@
   justify-content: space-between;
   gap: 1rem;
 }
-.sideBar2 .language {
+.sideBar2 .div {
   width: 200px;
 }
-.sideBar2 .language .row1 {
+.sideBar2 .div .row1 {
   display: flex;
   justify-content: space-between;
 }
-.sideBar2 .language .row1 .col1 {
+.sideBar2 .div .row1 .col1 {
   font-size: 1rem;
   color: black;
 }

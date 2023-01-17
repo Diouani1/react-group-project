@@ -37,11 +37,11 @@
 span {
   font-size: 1.3rem;
 }
-.sideBar3 .language .row1 {
+.sideBar3 .div .row1 {
   display: flex;
   justify-content: space-between;
 }
-.sideBar3 .language .row1 .col1 {
+.sideBar3 .div .row1 .col1 {
   font-size: 0.8rem;
   color: black;
 }
