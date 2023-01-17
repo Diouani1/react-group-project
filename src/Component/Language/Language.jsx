@@ -94,9 +94,7 @@ const Language = () => {
             <option value="Complete">Complete</option>
           </Form.Select>
         </Form.Group>
-      </Form>
-
-      <Row className="buttons">
+        <Row className="buttons" style={{paddingTop:"1rem"}}>
         <Col className="left">
           <NavLink to="/skills">
             <Button variant="primary">Back</Button>
@@ -108,6 +106,9 @@ const Language = () => {
           </NavLink>
         </Col>
       </Row>
+      </Form>
+
+      
     </div>
   );
 };

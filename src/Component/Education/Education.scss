@@ -52,18 +52,19 @@
   .buttons {
     display: flex;
     justify-content: space-around;
-    button {
-      border-radius: 10px;
-      height: 3rem;
-      width: 6rem;
-    }
-    .buttonback {
-      background-color: blue;
-      color: white;
-    }
-    .buttonnext {
-      background-color: red;
-      color: white;
-    }
+    padding-top: 1rem;
+    // button {
+    //   border-radius: 10px;
+    //   height: 3rem;
+    //   width: 6rem;
+    // }
+    // .buttonback {
+    //   background-color: blue;
+    //   color: white;
+    // }
+    // .buttonnext {
+    //   background-color: red;
+    //   color: white;
+    // }
   }
 }
