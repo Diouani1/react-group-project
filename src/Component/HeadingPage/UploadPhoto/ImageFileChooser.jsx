@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { ImageFileContext } from "../../../context/ImageFileContext";
+import { ImageFileContext } from "context/ImageFileContext";
 import "./ImageFileChooser.scss";
 
 function ImageFileChooser() {
