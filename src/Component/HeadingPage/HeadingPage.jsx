@@ -11,30 +11,31 @@ import Col from "react-bootstrap/Col";
 
 function HeadingPage() {
   return (
-    <Container>
-      <Row>
-        <Col
-          lg={2}
-          sm={12}
-          md={3}
-          className="d-flex flex-column align-items-center"
-        >
-          <ImageFilePreviewer />
-          <ImageFileChooser />
-        </Col>
-        <Col>
-          <PersonalDetails />
-        </Col>
-      </Row>
-
-      <Row className="buttons">
-        <Col className="right">
-          <NavLink to="workhistory">
-            <Button variant="danger">Next</Button>
-          </NavLink>
-        </Col>
-      </Row>
-    </Container>
+    <div style={{ paddingTop: "5%" }}>
+      <Container>
+        <Row>
+          <Col
+            lg={2}
+            sm={12}
+            md={3}
+            className="d-flex flex-column align-items-center"
+          >
+            <ImageFilePreviewer />
+            <ImageFileChooser />
+          </Col>
+          <Col>
+            <PersonalDetails />
+          </Col>
+        </Row>
+        <Row className="buttons">
+          <Col className="right">
+            <NavLink to="workhistory">
+              <Button variant="danger">Next</Button>
+            </NavLink>
+          </Col>
+        </Row>
+      </Container>
+    </div>
   );
 }
 

@@ -5,16 +5,8 @@ import "./Education.scss";
 import { EduSkillContext } from "../EduSkillContext/EduSkillContext";
 
 const Education = () => {
-
-  const { edu, efo, education, setEducation, state, dispatch } =
+  const { edu, efo, education, setEducation, grade, dispatch } =
     useContext(EduSkillContext);
-  console.log(state);
-  // function submitHandler(e) {
-  //   e.preventDefault();
-  //   setEducation(e.target.value);
-  //   console.log(e.target.value);
-  // }
-
 
   return (
     <div className="education">
@@ -33,6 +25,7 @@ const Education = () => {
               type="input"
               placeholder="e.g.Leipzig-University"
               onChange={(e) => dispatch({ name: e.target.value })}
+              value={grade.name}
             />
           </Form.Group>
           <Form.Group className="mb-3">
@@ -41,10 +34,9 @@ const Education = () => {
             <Form.Control
               className="input"
               type="input"
-
               placeholder="e.g.Leipzig,Germany"
               onChange={(e) => dispatch({ location: e.target.value })}
-
+              value={grade.location}
             />
           </Form.Group>
         </div>
@@ -56,8 +48,8 @@ const Education = () => {
               className="input"
               aria-label="Default select example"
               onChange={(e) => dispatch({ degree: e.target.value })}
+              value={grade.degree}
             >
-
               <option>Select a Degree</option>
               {edu.map((item, i) => (
                 <option key={i} value={i}>
@@ -73,6 +65,7 @@ const Education = () => {
               type="input"
               placeholder="e.g. Bachelor's"
               onChange={(e) => dispatch({ enter: e.target.value })}
+              value={grade.enter}
             />
           </Form.Group>
         </div>
@@ -84,6 +77,7 @@ const Education = () => {
               type="input"
               placeholder="e.g. Music"
               onChange={(e) => dispatch({ field: e.target.value })}
+              value={grade.field}
             />
           </Form.Group>
           <div className="thirdlinechild">
@@ -92,6 +86,7 @@ const Education = () => {
               className="input"
               type="date"
               onChange={(e) => dispatch({ start: e.target.value })}
+              value={grade.start}
             />
           </div>
           <div className="thirdlinechild">
@@ -100,6 +95,7 @@ const Education = () => {
               className="input"
               type="date"
               onChange={(e) => dispatch({ end: e.target.value })}
+              value={grade.end}
             />
           </div>
         </div>
@@ -110,6 +106,7 @@ const Education = () => {
               placeholder="Leave a comment here "
               style={{ width: "700px", height: "200px", margin: "auto" }}
               onChange={(e) => dispatch({ textArea: e.target.value })}
+              value={grade.textArea}
             />
           </FloatingLabel>
         </Form.Group>

@@ -2,8 +2,12 @@
   display: flex;
   min-height: 80vh;
 }
+ul {
+  padding: 0;
+}
 .cvstyle1 ul li {
   list-style: none;
+  padding: 0;
 }
 .sideBar1 {
   min-height: 100%;

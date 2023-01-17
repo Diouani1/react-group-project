@@ -18,9 +18,6 @@ const PersonalDetailsContextProvider = ({ children }) => {
     email: "",
   };
   const [details, dispatch] = useReducer(reducer, initialState);
-  useEffect(() => {
-    console.log(details);
-  }, [details]);
 
   return (
     <PersonalDetailsContext.Provider value={{ details, dispatch }}>

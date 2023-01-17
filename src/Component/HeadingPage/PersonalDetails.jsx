@@ -6,7 +6,7 @@ import Container from "react-bootstrap/Container";
 import { PersonalDetailsContext } from "../../context/PersonalDetailsContext";
 
 function PersonalDetails() {
-  const { dispatch } = useContext(PersonalDetailsContext);
+  const { details, dispatch } = useContext(PersonalDetailsContext);
   return (
     <div>
       <Container>
@@ -18,6 +18,7 @@ function PersonalDetails() {
                 onChange={(e) => dispatch({ firstName: e.target.value })}
                 type="text"
                 placeholder="First Name"
+                value={details.firstName}
               />
             </Form.Group>
 
@@ -27,6 +28,7 @@ function PersonalDetails() {
                 onChange={(e) => dispatch({ lastName: e.target.value })}
                 type="text"
                 placeholder="Last Name"
+                value={details.lastName}
               />
             </Form.Group>
           </Row>
@@ -34,6 +36,7 @@ function PersonalDetails() {
             <Form.Label>Profession</Form.Label>
             <Form.Control
               onChange={(e) => dispatch({ profession: e.target.value })}
+              value={details.profession}
             />
           </Form.Group>
           <Row className="mb-3">
@@ -41,6 +44,7 @@ function PersonalDetails() {
               <Form.Label>City</Form.Label>
               <Form.Control
                 onChange={(e) => dispatch({ city: e.target.value })}
+                value={details.city}
               />
             </Form.Group>
 
@@ -48,6 +52,7 @@ function PersonalDetails() {
               <Form.Label>Postal Code</Form.Label>
               <Form.Control
                 onChange={(e) => dispatch({ postalCode: e.target.value })}
+                value={details.postalCode}
               />
             </Form.Group>
 
@@ -55,6 +60,7 @@ function PersonalDetails() {
               <Form.Label>Country</Form.Label>
               <Form.Control
                 onChange={(e) => dispatch({ country: e.target.value })}
+                value={details.country}
               />
             </Form.Group>
           </Row>
@@ -64,6 +70,7 @@ function PersonalDetails() {
               <Form.Control
                 onChange={(e) => dispatch({ phone: e.target.value })}
                 placeholder="e.g. +49-123-4567-89"
+                value={details.phone}
               />
             </Form.Group>
             <Form.Group as={Col} sm={12} md={12} lg={6}>
@@ -73,6 +80,7 @@ function PersonalDetails() {
                 type="email"
                 required
                 placeholder="emial"
+                value={details.email}
               />
             </Form.Group>
           </Row>

@@ -6,8 +6,10 @@ import ImageFilePreviewer from "../../HeadingPage/UploadPhoto/ImageFilePreviewer
 import { WorkHistoryContext } from "../../../context/WorkHistoryContext";
 import { PersonalityContext } from "context/PersonalityContext";
 import { LanguageData } from "context/LanguageContext";
+import { EduSkillContext } from "Component/EduSkillContext/EduSkillContext";
 
 const CvStyle2 = () => {
+  const { grade } = useContext(EduSkillContext);
   const { language } = useContext(LanguageData);
   const { details } = useContext(PersonalDetailsContext);
   const { color } = useContext(DataUeser);
@@ -72,8 +74,11 @@ const CvStyle2 = () => {
         <div>
           <span style={{ color: color }}>Education</span>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex,
-            excepturi.
+            "I am proud to have graduated from {grade.name}, located in{" "}
+            {grade.location}, with a {grade.degree} in {grade.field} . My
+            graduation dates were from {grade.start} to {grade.end} . I am
+            always open to learn more in my field of study. <br />{" "}
+            {grade.textArea} ."
           </p>
         </div>
         <div>
