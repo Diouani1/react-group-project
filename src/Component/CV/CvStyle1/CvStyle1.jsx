@@ -8,7 +8,7 @@ import { PersonalityContext } from "context/PersonalityContext";
 import { LanguageData } from "context/LanguageContext";
 import { EduSkillContext } from "Component/EduSkillContext/EduSkillContext";
 import { MdAlternateEmail } from "react-icons/md";
-import { FaPhoneVolume } from "react-icons/fa";
+import { MdContactPhone } from "react-icons/md";
 import { MdLocationOn } from "react-icons/md";
 const CvStyle1 = () => {
   const { grade } = useContext(EduSkillContext);
@@ -28,15 +28,14 @@ const CvStyle1 = () => {
           <h6>Contact Information</h6>
           <div className="div">
             <div className="row1">
-              <FaPhoneVolume className="col1" color="white" />
               <span className="col1">{details.phone}</span>
+              <MdContactPhone className="col1" color="white" />
             </div>
             <div className="row1">
-              <MdAlternateEmail className="col1" color="white" />
               <span className="col1">{details.email}</span>
+              <MdAlternateEmail className="col1" color="white" />
             </div>
             <div className="row1">
-              <MdLocationOn className="col1" color="white" />
               <div>
                 <span className="col1">{details.postalCode}</span>{" "}
                 <span className="col1">{details.city}</span>
@@ -44,6 +43,7 @@ const CvStyle1 = () => {
                 <span className="col1">{details.country}</span>
                 <br />
               </div>
+              <MdLocationOn className="col1" color="white" />
             </div>
           </div>
         </div>
