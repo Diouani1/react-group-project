@@ -1,4 +1,4 @@
-import { Form, Button, FloatingLabel } from "react-bootstrap";
+import { Form, Button, FloatingLabel, Container } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import { useContext } from "react";
 import "./Education.scss";
@@ -105,7 +105,7 @@ const Education = () => {
             <Form.Control
               as="textarea"
               placeholder="Leave a comment here "
-              style={{ width: "700px", height: "200px", margin: "auto" }}
+              style={{ width: "40vw", height: "30vh", margin: "auto" }}
               onChange={(e) => dispatch({ textArea: e.target.value })}
               value={grade.textArea}
             />

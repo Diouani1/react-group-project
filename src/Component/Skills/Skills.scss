@@ -1,9 +1,9 @@
 .skills {
   width: 100vw;
   display: flex;
+
   .left {
-    width: 40%;
-    overflow: scroll;
+    // width: 40%;
 
     .me-2 {
       border-radius: 10px;
@@ -30,7 +30,7 @@
     }
   }
   .right {
-    width: 75%;
+    // width: 75%;
     h1 {
       text-align: center;
     }

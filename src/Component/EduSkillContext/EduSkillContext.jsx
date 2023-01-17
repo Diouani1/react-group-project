@@ -54,30 +54,18 @@ export default function EduSkillProvider({ children }) {
     "Attention to Detail",
   ];
 
+  const [deleteButton, setDeleteButton] = useState();
+
   const liButton = { add: "ADD", checked: "✔", deleted: "✘" };
   const [buttons, setButtons] = useState(liButton.add);
 
   const [education, setEducation] = useState("");
   const initialState = {
-    // schoolName: "",
-    // schoolLocation: "",
-    // Degree: "",
-    // enterDifferentDegree: "",
-    // fieldOfStudy: "",
-    // graduationStartDate: "",
-    // graduationEndDate: "",
     ...efo,
   };
+  const [valueIn, setValueIn] = useState("");
 
-  // const initialStateSkills = {
-  //   schoolName: "",
-  //   schoolLocation: "",
-  //   Degree: "",
-  //   enterDifferentDegree: "",
-  //   fieldOfStudy: "",
-  //   graduationStartDate: "",
-  //   graduationEndDate: "",
-  // };
+  const [addSkills, setAddSkills] = useState([]);
 
   const reducer = (preState, action) => {
     return {
@@ -102,6 +90,14 @@ export default function EduSkillProvider({ children }) {
         setButtons,
         grade,
         dispatch,
+        // stateSkills,
+        // dispatchSkills,
+        deleteButton,
+        setDeleteButton,
+        addSkills,
+        setAddSkills,
+        valueIn,
+        setValueIn,
       }}
     >
       {children}
