@@ -1,9 +1,24 @@
 .style {
   padding-top: 10%;
+  display: flex;
+  flex-direction: column;
+}
+.style:first-child {
+  align-items: flex-end;
 }
 
 .style button {
   margin-top: 1rem;
   width: 150px;
   background-color: rgba(0, 0, 0, 0.823);
+}
+
+@media (max-width: 992px) {
+  .style {
+    flex-direction: row;
+    margin-bottom: 1rem;
+    gap: 5px;
+    padding-top: 1rem;
+    flex-wrap: wrap;
+  }
 }

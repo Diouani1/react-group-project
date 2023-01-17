@@ -12,11 +12,6 @@ const MainHeader = () => {
         padding: "0 2rem",
       }}
     >
-      {/*  i use the navlink temporary, the navlink should in component */}
-      <NavLink to="cv">
-        <Button>diouani</Button>
-      </NavLink>
-
       <Navbar>
         <Navbar.Brand>{user}</Navbar.Brand>
         <Navbar.Toggle />

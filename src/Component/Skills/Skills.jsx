@@ -9,31 +9,30 @@ import {
 } from "react-bootstrap";
 import { useContext } from "react";
 import { EduSkillContext } from "../EduSkillContext/EduSkillContext";
+import { NavLink } from "react-router-dom";
 
 const Skills = () => {
-  const { lis, liButton } = useContext(EduSkillContext);
-  console.log(lis.length, liButton);
+  const { lis, liButton, buttons, setButtons } = useContext(EduSkillContext);
+  const addedList = () => {};
+  function addHandler(props) {
+    console.log(props);
+    setButtons(liButton.checked);
+    buttons(liButton.add);
+  }
 
   return (
     <div className="skills">
       <Container className="left">
+        <h6>Add skill</h6>
         <Form className="d-flex">
           <Form.Control
-            type="search"
-            placeholder="Search"
+            type="input"
+            placeholder="Enter a skill"
             className="me-2"
             aria-label="Search"
           />
-          <Button
-            variant="outline-success"
-            style={{
-              height: "2rem",
-              backgroundColor: "blue",
-              color: "white",
-              borderRadius: "10px",
-            }}
-          >
-            Search
+          <Button onClick={() => {}} variant="danger">
+            ADD
           </Button>
         </Form>
 
@@ -43,36 +42,54 @@ const Skills = () => {
               // as="li"
               key={i}
               className="lists"
+              style={{ width: "100%" }}
             >
               <li>{item}</li>
-              <Button variant="outline-info">{liButton.add}</Button>
+              <Button
+                onClick={() => {
+                  addHandler(item);
+                }}
+                variant="outline-info"
+              >
+                {buttons}
+              </Button>
             </ListGroup.Item>
           ))}
-          {/* <ListGroup.Item
-        as="li"
-        className="d-flex justify-content-between align-items-start"
-      > <Button variant="outline-info">Info</Button>
-        <div className="ms-2 me-auto">
-          <div className="fw-bold">Subheading</div>
-        
-        </div>
-      </ListGroup.Item>  */}
         </ListGroup>
       </Container>
       <Container className="right">
         <h1>
           <span>Highlight your skills</span>
         </h1>
+        <div className="mainskills">
+          <ListGroup.Item className="skillitem">
+            <li>Singing</li>
+
+
+            <Button variant="outline-info">{liButton.deleted}</Button>
+          </ListGroup.Item>
+        </div>
+
 
         <div className="addingarea"></div>
 
         <ButtonGroup className="buttons">
-          <Button className="backbutton" variant="light" type="submit">
-            Back
-          </Button>
-          <Button className="nextbutton" variant="danger" type="submit">
-            Next
-          </Button>
+          <NavLink to="/education">
+
+            <Button className="backbutton" variant="outline-dark" type="submit">
+
+              Back
+            </Button>
+          </NavLink>
+          <NavLink to="/language">
+            <Button
+              className="nextbutton"
+              variant="outline-danger"
+              type="submit"
+            >
+              Next
+            </Button>
+          </NavLink>
         </ButtonGroup>
       </Container>
     </div>

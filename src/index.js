@@ -2,14 +2,20 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
+
 import DataOfUser from "./DataOfUser";
 import ImageFileContextProvider from "context/ImageFileContext";
 import PersonalDetailsContextProvider from "context/PersonalDetailsContext";
 import { BrowserRouter } from "react-router-dom";
+
 import EduSkillProvider from "./Component/EduSkillContext/EduSkillContext";
+
 import PrintPdfContextProvider from "context/PrintPdfContext";
 import WorkHistoryContextProvider from "context/WorkHistoryContext";
+
 import LanguageContext from "context/LanguageContext";
+import PersonalityContextProvider from "context/PersonalityContext";
+import PrintPdfContextProvider from "context/PrintPdfContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -19,11 +25,13 @@ root.render(
         <PersonalDetailsContextProvider>
           <EduSkillProvider>
             <WorkHistoryContextProvider>
-              <PrintPdfContextProvider>
-              <LanguageContext>
-                <App />
-              </LanguageContext>
-               </PrintPdfContextProvider>
+              <PersonalityContextProvider>
+                <PrintPdfContextProvider>
+                  <LanguageContext>
+                    <App />
+                  </LanguageContext>
+                </PrintPdfContextProvider>
+              </PersonalityContextProvider>
             </WorkHistoryContextProvider>
           </EduSkillProvider>
         </PersonalDetailsContextProvider>

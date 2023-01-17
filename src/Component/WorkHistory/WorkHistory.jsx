@@ -8,9 +8,9 @@ import { NavLink } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 
 function WorkHistory() {
-  const { dispatch } = useContext(WorkHistoryContext);
+  const { state, dispatch } = useContext(WorkHistoryContext);
   return (
-    <div>
+    <div style={{ padding: "5%" }}>
       <Container>
         <Row>
           <Col>
@@ -27,6 +27,7 @@ function WorkHistory() {
               <Form.Label>Job Title</Form.Label>
               <Form.Control
                 onChange={(e) => dispatch({ jobTitle: e.target.value })}
+                value={state.jobTitle}
               />
             </Form.Group>
 
@@ -34,6 +35,7 @@ function WorkHistory() {
               <Form.Label>Employer</Form.Label>
               <Form.Control
                 onChange={(e) => dispatch({ employer: e.target.value })}
+                value={state.employer}
               />
             </Form.Group>
           </Row>
@@ -42,6 +44,7 @@ function WorkHistory() {
               <Form.Label>City</Form.Label>
               <Form.Control
                 onChange={(e) => dispatch({ city: e.target.value })}
+                value={state.city}
               />
             </Form.Group>
 
@@ -49,6 +52,7 @@ function WorkHistory() {
               <Form.Label>Country</Form.Label>
               <Form.Control
                 onChange={(e) => dispatch({ country: e.target.value })}
+                value={state.country}
               />
             </Form.Group>
           </Row>
@@ -60,6 +64,7 @@ function WorkHistory() {
                 min="1950-01-01"
                 max="2023-01-18"
                 onChange={(e) => dispatch({ startDate: e.target.value })}
+                value={state.startDate}
               />
             </Form.Group>
 
@@ -70,6 +75,7 @@ function WorkHistory() {
                 min="2018-01-01"
                 max="2023-01-18"
                 onChange={(e) => dispatch({ endDate: e.target.value })}
+                value={state.endDate}
               />
             </Form.Group>
           </Row>

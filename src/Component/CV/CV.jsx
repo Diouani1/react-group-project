@@ -5,20 +5,23 @@ import { useNavigate } from "react-router-dom";
 import { DataUeser } from "../../DataOfUser";
 import { PrintPdfContext } from "context/PrintPdfContext";
 const CV = () => {
-  const { setColor, style, diStyle } = useContext(DataUeser);
+  const { setColor, style, diStyle, color } = useContext(DataUeser);
 
   const { printPdfRef, handlePrint } = useContext(PrintPdfContext);
 
   const navigate = useNavigate();
   return (
     <div className="cv">
-      <Container fluid>
+      <Container>
         <Row className="justify-content-md-center my-4">
-          <Col className="d-flex justify-content-around mx-2" xs="2">
+          <Col
+            className="d-flex justify-content-around mx-2"
+            style={{ maxWidth: "360px" }}
+          >
             <Button
               variant="primary"
               onClick={() => {
-                setColor("blue");
+                setColor("#6666ff");
                 console.log("first");
               }}
             ></Button>{" "}
@@ -32,17 +35,17 @@ const CV = () => {
             ></Button>{" "}
             <Button
               variant="warning"
-              onClick={() => setColor("yellow")}
+              onClick={() => setColor("#cccc00")}
             ></Button>{" "}
-            <Button variant="danger" onClick={() => setColor("red")}></Button>
             <Button
-              variant="info"
-              onClick={() => setColor("lightblue")}
-            ></Button>{" "}
+              variant="danger"
+              onClick={() => setColor("#ff5c33")}
+            ></Button>
+            <Button variant="info" onClick={() => setColor("#00bfff")}></Button>{" "}
           </Col>
         </Row>
         <Row>
-          <Col className="d-flex flex-column align-items-end mx-2 style" xs="2">
+          <Col className="style" lg={2} xs={12} sm={12} md={12}>
             <Button onClick={() => diStyle({ type: "style1" })}>
               Style One
             </Button>
@@ -60,36 +63,42 @@ const CV = () => {
             </Button>
           </Col>
 
-          <Col className="mx-2">
-            <div
-              ref={printPdfRef}
-              style={{ width: "100%", height: window.innerHeight }}
-            >
+          <Col
+            // lg={10}
+            className="mx-2"
+            style={{
+              border: `1px solid ${color}`,
+              minHeight: "80vh",
+              width: "60%",
+              padding: "0",
+            }}
+          >
+            <div ref={printPdfRef} style={{ height: "fit-content" }}>
               {style}
             </div>
           </Col>
 
-          <Col
-            className="d-flex flex-column align-items-start mx-2  style"
-            xs="2"
-          >
+          <Col className="style" lg={2} md={12} xs={12} sm={12}>
             <Button variant="success" onClick={() => navigate("/")}>
-              First Step{" "}
+              Personal Details{" "}
             </Button>
             <Button variant="success" onClick={() => navigate("/workhistory")}>
-              Second Step{" "}
+              Work History{" "}
             </Button>
             <Button variant="success" onClick={() => navigate("/education")}>
-              Third Step{" "}
+              Education{" "}
             </Button>
             <Button variant="success" onClick={() => navigate("/skills")}>
-              Fourth Step{" "}
+              Skills{" "}
             </Button>
-            <Button variant="success" onClick={() => navigate("")}>
-              Funfth Step{" "}
+            <Button variant="success" onClick={() => navigate("/language")}>
+              Language{" "}
             </Button>
-            <Button variant="primary" onClick={handlePrint}>
-              Print this out
+            <Button variant="success" onClick={() => navigate("/personality")}>
+              Personality{" "}
+            </Button>
+            <Button style={{ backgroundColor: color }} onClick={handlePrint}>
+              Print Resume
             </Button>
           </Col>
         </Row>

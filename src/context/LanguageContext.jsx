@@ -9,7 +9,7 @@ const LanguageContext = ({ children }) => {
   const initialState = {
     firstLanguage: "",
     firstLanguageLevel: "",
-    SecondLanguage: "",
+    secondLanguage: "",
     secondLanguageLevel: "",
     thirdLanguage: "",
     thirdLanguageLevel: "",

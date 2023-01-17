@@ -1,17 +1,12 @@
-import {
-  createContext,
-  useEffect,
-  useReducer,
-  useState,
-} from "react";
+import { createContext, useEffect, useReducer, useState } from "react";
 import CvStyle1 from "./Component/CV/CvStyle1/CvStyle1";
-import CvStyle2 from "./Component/CV/CvStyle2/CvStyle2"
-import CvStyle3 from "./Component/CV/CvStyle3/CvStyle3"
+import CvStyle2 from "./Component/CV/CvStyle2/CvStyle2";
+import CvStyle3 from "./Component/CV/CvStyle3/CvStyle3";
 export const DataUeser = createContext();
 const nameOfUser = JSON.parse(localStorage.getItem("user"));
 
 const DataOfUser = ({ children }) => {
-  const [color, setColor] = useState("blue")
+  const [color, setColor] = useState("#6666ff");
   const [userName, setUserName] = useState();
   const [fullName, setFullName] = useState();
   const [email, setEmail] = useState();
@@ -33,7 +28,6 @@ const DataOfUser = ({ children }) => {
       return prev;
     }
   }
-  
 
   function reducer(prev, action) {
     if (action.type === "signup") {
@@ -67,7 +61,7 @@ const DataOfUser = ({ children }) => {
   return (
     <DataUeser.Provider
       value={{
-        color, 
+        color,
         setColor,
         state,
         dispatch,
@@ -87,9 +81,8 @@ const DataOfUser = ({ children }) => {
         setError,
         hiddenPassword,
         setHiddenPassword,
-        style, 
-        diStyle
-       
+        style,
+        diStyle,
       }}
     >
       {children}
