@@ -11,7 +11,7 @@ const Personalit = () => {
 
   return (
     <div className="personality container">
-      <h2>Tell us About Your Personality</h2>
+      <h2 className="heading"><span>Tell us About Your Personality</span></h2>
       <InputGroup>
         <InputGroup.Text className="perso">Resilient</InputGroup.Text>
         <Form.Control
@@ -78,6 +78,7 @@ const Personalit = () => {
           </NavLink>
         </Col>
       </Row>
+      
     </div>
   );
 };
