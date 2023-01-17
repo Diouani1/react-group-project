@@ -7,7 +7,9 @@ import { WorkHistoryContext } from "../../../context/WorkHistoryContext";
 import { PersonalityContext } from "context/PersonalityContext";
 import { LanguageData } from "context/LanguageContext";
 import { EduSkillContext } from "Component/EduSkillContext/EduSkillContext";
-
+import { MdAlternateEmail } from "react-icons/md";
+import { FaPhoneVolume } from "react-icons/fa";
+import { MdLocationOn } from "react-icons/md";
 const CvStyle3 = () => {
   const { grade } = useContext(EduSkillContext);
   const { language } = useContext(LanguageData);
@@ -76,13 +78,26 @@ const CvStyle3 = () => {
           <span>{`${details.firstName}  ${details.lastName}`}</span>
           <h6>Contact Information</h6>
 
-          <ul>
-            <li>{details.phone}</li>
-            <li>{details.email}</li>
-            <li>{details.city}</li>
-            <li>{details.postalCode}</li>
-            <li>{details.country}</li>
-          </ul>
+          <div className="div">
+            <div className="row1">
+              <FaPhoneVolume className="col1" color="white" />
+              <span className="col1">{details.phone}</span>
+            </div>
+            <div className="row1">
+              <MdAlternateEmail className="col1" color="white" />
+              <span className="col1">{details.email}</span>
+            </div>
+            <div className="row1">
+              <MdLocationOn className="col1" color="white" />
+              <div>
+                <span className="col1">{details.postalCode}</span>{" "}
+                <span className="col1">{details.city}</span>
+                <br />
+                <span className="col1">{details.country}</span>
+                <br />
+              </div>
+            </div>
+          </div>
         </div>
         <div>
           <span>Language</span>
