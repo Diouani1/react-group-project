@@ -14,7 +14,10 @@ const CV = () => {
     <div className="cv">
       <Container>
         <Row className="justify-content-md-center my-4">
-          <Col className="d-flex justify-content-around mx-2" xs="2">
+          <Col
+            className="d-flex justify-content-around mx-2"
+            style={{ maxWidth: "360px" }}
+          >
             <Button
               variant="primary"
               onClick={() => {
@@ -42,11 +45,7 @@ const CV = () => {
           </Col>
         </Row>
         <Row>
-          <Col
-            className="d-flex flex-column align-items-end mx-2 style"
-            // lg={1}
-            xs="2"
-          >
+          <Col className="style" lg={2} xs={12} sm={12} md={12}>
             <Button onClick={() => diStyle({ type: "style1" })}>
               Style One
             </Button>
@@ -79,11 +78,7 @@ const CV = () => {
             </div>
           </Col>
 
-          <Col
-            className="d-flex flex-column align-items-start mx-2  style"
-            // lg={1}
-            xs="2"
-          >
+          <Col className="style" lg={2} md={12} xs={12} sm={12}>
             <Button variant="success" onClick={() => navigate("/")}>
               Personal Details{" "}
             </Button>

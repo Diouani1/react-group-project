@@ -86,7 +86,7 @@ export default function EduSkillProvider({ children }) {
     };
   };
 
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const [grade, dispatch] = useReducer(reducer, initialState);
   // const [stateSkills, dispatchSkills] = useReducer(reducer, initialStateSkills);
 
   return (
@@ -100,7 +100,7 @@ export default function EduSkillProvider({ children }) {
         setEducation,
         buttons,
         setButtons,
-        state,
+        grade,
         dispatch,
       }}
     >
