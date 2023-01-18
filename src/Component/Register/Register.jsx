@@ -1,3 +1,4 @@
+import "./register.css";
 import { useContext, useState } from "react";
 import { DataUeser } from "../../DataOfUser";
 import bcrypt from "bcryptjs";
@@ -25,7 +26,7 @@ export default function Register() {
   } = useContext(DataUeser);
   const changeMode = () => {
     setModeType(modeType === "signin" ? "signup" : "signin");
-    setError(null)
+    setError(null);
   };
   async function handlSignIn(event) {
     event.preventDefault();
@@ -89,7 +90,7 @@ export default function Register() {
               <button type="submit" className="btn btn-primary">
                 Submit
               </button>
-              <p style={{color:"red"}}>{error}</p>
+              <p style={{ color: "red" }}>{error}</p>
             </div>
           </div>
         </form>
@@ -125,7 +126,6 @@ export default function Register() {
               className="form-control mt-1"
               placeholder="e.g Sahrawi"
               onChange={(e) => setUserName(e.target.value)}
-
             />
           </div>
           <div className="form-group mt-3">
@@ -159,8 +159,7 @@ export default function Register() {
             <button type="submit" className="btn btn-primary">
               Submit
             </button>
-            <p style={{color:"red"}}>{error}</p>
-
+            <p style={{ color: "red" }}>{error}</p>
           </div>
         </div>
       </form>
