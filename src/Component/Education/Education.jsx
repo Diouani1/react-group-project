@@ -95,7 +95,6 @@ const Education = () => {
         </Row>
 
         <Row style={{ marginTop: "1rem" }}>
-
           <Col className="mb-3">
             <Form.Group>
               <Form.Label>Field of Study</Form.Label>
@@ -146,18 +145,15 @@ const Education = () => {
             <Form.Control
               as="textarea"
               placeholder="Leave a comment here "
-
               style={{ width: "50vw", height: "20vh" }}
-
               onChange={(e) => dispatch({ textArea: e.target.value })}
               value={grade.textArea}
             />
           </FloatingLabel>
         </Form.Group>
 
-        <ButtonGroup
-          className="d-flex"
-          style={{ justifyContent: "space-between" }}
+        <Form.Group
+          style={{ display: "flex", justifyContent: "space-between" }}
         >
           <Button variant="primary" onClick={() => navigate("/workhistory")}>
             Back
@@ -166,7 +162,7 @@ const Education = () => {
           <Button variant="danger" type="submit">
             Next
           </Button>
-        </ButtonGroup>
+        </Form.Group>
       </Form>
     </div>
   );
