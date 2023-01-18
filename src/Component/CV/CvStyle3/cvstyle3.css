@@ -46,3 +46,29 @@ span {
   font-size: 0.8rem;
   color: black;
 }
+
+@media (max-width: 560px) {
+  .cvstyle3 {
+    font-size: 70%;
+  }
+
+  .cvstyle3 span {
+    font-size: 12px;
+  }
+  .cvstyle3 h6 {
+    font-size: 80%;
+  }
+  .cvstyle3 h5 {
+    font-size: 80%;
+  }
+  .cvstyle3 .preview {
+    width: 100%;
+    height: 100%;
+  }
+  .cvstyle3 .sideBar3 {
+    padding: 5px;
+  }
+  .cvstyle3 .sideBar3 .div .col1 {
+    font-size: 10px;
+  }
+}

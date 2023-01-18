@@ -14,7 +14,6 @@
     color: blue;
   }
   .container {
-
     .firstsecondline {
       display: flex;
       justify-content: center;
@@ -53,7 +52,6 @@
     border-radius: 10px;
   }
 
-
   .buttons {
     display: flex;
     justify-content: space-around;
@@ -75,5 +73,9 @@
       }
     }
   }
-
+}
+@media (max-width: 560px) {
+  .education {
+    font-size: 60%;
+  }
 }

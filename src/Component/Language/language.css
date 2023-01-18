@@ -6,6 +6,14 @@
 
 @media (max-width: 729px) {
   .language {
+    font-size: 90%;
     width: 100%;
+  }
+
+  .language input {
+    font-size: 80%;
+  }
+  .language select {
+    font-size: 80%;
   }
 }
