@@ -5,6 +5,11 @@
   gap: 1rem;
   width: 45%;
   margin: auto;
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
 }
 .perso {
   width: 100px;

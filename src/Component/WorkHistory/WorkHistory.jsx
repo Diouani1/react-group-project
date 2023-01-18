@@ -4,11 +4,16 @@ import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 import { WorkHistoryContext } from "../../context/WorkHistoryContext";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 
 function WorkHistory() {
   const { state, dispatch } = useContext(WorkHistoryContext);
+  const navigate = useNavigate();
+  function handelSubmit(e) {
+    e.preventDefault();
+    navigate("/education");
+  }
   return (
     <div style={{ padding: "5%" }}>
       <Container>
@@ -21,13 +26,14 @@ function WorkHistory() {
           </Col>
         </Row>
 
-        <Form>
+        <Form onSubmit={handelSubmit}>
           <Row className="mb-3">
             <Form.Group as={Col} sm={12} md={12} lg={6}>
               <Form.Label>Job Title</Form.Label>
               <Form.Control
                 onChange={(e) => dispatch({ jobTitle: e.target.value })}
                 value={state.jobTitle}
+                required
               />
             </Form.Group>
 
@@ -36,6 +42,7 @@ function WorkHistory() {
               <Form.Control
                 onChange={(e) => dispatch({ employer: e.target.value })}
                 value={state.employer}
+                required
               />
             </Form.Group>
           </Row>
@@ -45,6 +52,7 @@ function WorkHistory() {
               <Form.Control
                 onChange={(e) => dispatch({ city: e.target.value })}
                 value={state.city}
+                required
               />
             </Form.Group>
 
@@ -53,6 +61,7 @@ function WorkHistory() {
               <Form.Control
                 onChange={(e) => dispatch({ country: e.target.value })}
                 value={state.country}
+                required
               />
             </Form.Group>
           </Row>
@@ -65,6 +74,7 @@ function WorkHistory() {
                 max="2023-01-18"
                 onChange={(e) => dispatch({ startDate: e.target.value })}
                 value={state.startDate}
+                required
               />
             </Form.Group>
 
@@ -76,6 +86,7 @@ function WorkHistory() {
                 max="2023-01-18"
                 onChange={(e) => dispatch({ endDate: e.target.value })}
                 value={state.endDate}
+                required
               />
             </Form.Group>
           </Row>
@@ -86,9 +97,9 @@ function WorkHistory() {
               </NavLink>
             </Col>
             <Col className="right">
-              <NavLink to="/education">
-                <Button variant="danger">Next</Button>
-              </NavLink>
+              <Button variant="danger" type="submit">
+                Next
+              </Button>
             </Col>
           </Row>
         </Form>
