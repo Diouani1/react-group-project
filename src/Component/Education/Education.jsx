@@ -25,11 +25,10 @@ const Education = () => {
         Include every school, even if you're still there or didn't graduate.
       </p>
       <Form className="container">
-
         <Row className="firstsecondline">
           <Col>
             <Form.Group className="mb-4">
-              <Form.Label>{efo.name}</Form.Label>
+              <Form.Label>School Name</Form.Label>
               <Form.Control
                 className="input"
                 type="input"
@@ -41,7 +40,7 @@ const Education = () => {
           </Col>
           <Col>
             <Form.Group className="mb-4">
-              <Form.Label>{efo.location}</Form.Label>
+              <Form.Label>School Location</Form.Label>
               <Form.Control
                 className="input"
                 type="input"
@@ -55,7 +54,7 @@ const Education = () => {
         <Row className="firstsecondline">
           <Col>
             <Form.Group className="mb-6">
-              <Form.Label>{efo.degree}</Form.Label>
+              <Form.Label>Degree</Form.Label>
 
               <Form.Select
                 className="input"
@@ -65,7 +64,7 @@ const Education = () => {
               >
                 <option>Select a Degree</option>
                 {edu.map((item, i) => (
-                  <option key={i} value={i}>
+                  <option key={i} value={item}>
                     {item}
                   </option>
                 ))}
@@ -74,7 +73,7 @@ const Education = () => {
           </Col>
           <Col>
             <Form.Group className="mb-6">
-              <Form.Label>{efo.enter}</Form.Label>
+              <Form.Label>Enter a different degree </Form.Label>
               <Form.Control
                 className="input"
                 type="input"
@@ -85,10 +84,10 @@ const Education = () => {
             </Form.Group>
           </Col>
         </Row>
-        <Row>
+        <Row className="studydate">
           <Col className="mb-3">
             <Form.Group>
-              <Form.Label>{efo.field}</Form.Label>
+              <Form.Label>Field of Study</Form.Label>
               <Form.Control
                 className="input"
                 type="input"
@@ -104,7 +103,7 @@ const Education = () => {
               flexDirection: "column",
             }}
           >
-            <Form.Label>{efo.start}</Form.Label>
+            <Form.Label>Graduation Start Date</Form.Label>
 
             <Form.Control
               className="input"
@@ -119,7 +118,7 @@ const Education = () => {
               flexDirection: "column",
             }}
           >
-            <Form.Label>{efo.end}</Form.Label>
+            <Form.Label>Graduation End Date</Form.Label>
             <Form.Control
               className="input"
               type="date"
@@ -133,29 +132,24 @@ const Education = () => {
             <Form.Control
               as="textarea"
               placeholder="Leave a comment here "
-              style={{ width: "70vw", height: "30vh" }}
+              style={{ width: "50vw", height: "20vh" }}
               onChange={(e) => dispatch({ textArea: e.target.value })}
               value={grade.textArea}
             />
           </FloatingLabel>
         </Form.Group>
 
-
         <ButtonGroup
           className="d-flex"
           style={{ justifyContent: "space-between" }}
         >
-
           <NavLink to="/workhistory">
             <Button variant="primary">Back</Button>
           </NavLink>
           <NavLink to="/skills">
             <Button variant="danger">Next</Button>
           </NavLink>
-
         </ButtonGroup>
-
-
       </Form>
     </div>
   );

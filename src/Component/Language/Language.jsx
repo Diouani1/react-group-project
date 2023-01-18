@@ -1,3 +1,4 @@
+import "./language.css";
 import { useContext } from "react";
 import { Form, Button, FormControl } from "react-bootstrap";
 import { LanguageData } from "../../context/LanguageContext";
@@ -11,10 +12,11 @@ const Language = () => {
   return (
     <div className="container">
       <Form
-        style={{
-          width: "60%",
-          margin: "100px Auto",
-        }}
+        className="language"
+        // style={{
+        //   width: "60%",
+        //   margin: "100px Auto",
+        // }}
       >
         <Form.Group>
           <Form.Label>First Language</Form.Label>
@@ -94,21 +96,19 @@ const Language = () => {
             <option value="Complete">Complete</option>
           </Form.Select>
         </Form.Group>
-        <Row className="buttons" style={{paddingTop:"1rem"}}>
-        <Col className="left">
-          <NavLink to="/skills">
-            <Button variant="primary">Back</Button>
-          </NavLink>
-        </Col>
-        <Col className="right">
-          <NavLink to="/personality">
-            <Button variant="danger">Next</Button>
-          </NavLink>
-        </Col>
-      </Row>
+        <Row className="buttons" style={{ paddingTop: "1rem" }}>
+          <Col className="left">
+            <NavLink to="/skills">
+              <Button variant="primary">Back</Button>
+            </NavLink>
+          </Col>
+          <Col className="right">
+            <NavLink to="/personality">
+              <Button variant="danger">Next</Button>
+            </NavLink>
+          </Col>
+        </Row>
       </Form>
-
-      
     </div>
   );
 };

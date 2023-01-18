@@ -21,13 +21,13 @@ export default function EduSkillProvider({ children }) {
     "No Degree",
   ];
   const efo = {
-    name: "School name",
-    location: "School Location",
-    degree: "Degree",
-    enter: "Enter a different degree",
-    field: "Field of Study",
-    start: "Graduation Start Date",
-    end: "Graduation End Date",
+    name: "",
+    location: "",
+    degree: "",
+    enter: "",
+    field: "",
+    start: "",
+    end: "",
     textArea: "",
   };
 

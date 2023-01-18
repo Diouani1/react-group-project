@@ -11,7 +11,7 @@ import Col from "react-bootstrap/Col";
 
 function HeadingPage() {
   return (
-    <div style={{ paddingTop: "5%" }}>
+    <div style={{ padding: "5% 0 1rem" }}>
       <Container>
         <Row>
           <Col
