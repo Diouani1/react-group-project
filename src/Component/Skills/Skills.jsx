@@ -39,10 +39,14 @@ const Skills = () => {
     <Container>
       <Row>
         <Col sm={5}>
-          <Container className="left">
-            <h6>Add skill</h6>
-            <Row>
+          <Container className="d-flex-column">
+            <Row
+              style={{
+                marginBottom: "1rem",
+              }}
+            >
               <Form className="d-flex">
+                <h6>Add skill</h6>
                 <Form.Control
                   type="input"
                   placeholder="Enter a skill"
@@ -70,7 +74,11 @@ const Skills = () => {
                     // as="li"
                     key={i}
                     className="lists"
-                    style={{ width: "100%" }}
+                    style={{
+                      listStyle: "none",
+                      display: "flex",
+                      justifyContent: "space-between",
+                    }}
                   >
                     <li>{item}</li>
                     <Button
@@ -100,7 +108,16 @@ const Skills = () => {
                 }}
               >
                 {addSkills.map((item, i) => (
-                  <ListGroup.Item key={i}>
+
+                  <ListGroup.Item
+                    key={i}
+                    style={{
+                      listStyle: "none",
+                      display: "flex",
+                      justifyContent: "space-between",
+                    }}
+                  >
+
                     <li>{item}</li>
                     <Button
                       onClick={() => deleteHandler(item)}
@@ -117,16 +134,18 @@ const Skills = () => {
           </Container>
         </Col>
       </Row>
-      <ButtonGroup className="buttons">
+      <ButtonGroup
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          marginTop: "1rem",
+        }}
+      >
         <NavLink to="/education">
-          <Button className="backbutton" variant="outline-dark" type="submit">
-            Back
-          </Button>
+          <Button variant="primary">Back</Button>
         </NavLink>
         <NavLink to="/language">
-          <Button className="nextbutton" variant="outline-danger" type="submit">
-            Next
-          </Button>
+          <Button variant="danger">Next</Button>
         </NavLink>
       </ButtonGroup>
     </Container>
