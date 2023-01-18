@@ -6,7 +6,7 @@ import App from "./App";
 import DataOfUser from "./DataOfUser";
 import ImageFileContextProvider from "context/ImageFileContext";
 import PersonalDetailsContextProvider from "context/PersonalDetailsContext";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, HashRouter } from "react-router-dom";
 
 import EduSkillProvider from "./Component/EduSkillContext/EduSkillContext";
 
@@ -16,10 +16,9 @@ import WorkHistoryContextProvider from "context/WorkHistoryContext";
 import LanguageContext from "context/LanguageContext";
 import PersonalityContextProvider from "context/PersonalityContext";
 
-
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <BrowserRouter>
+  <HashRouter>
     <DataOfUser>
       <ImageFileContextProvider>
         <PersonalDetailsContextProvider>
@@ -37,5 +36,5 @@ root.render(
         </PersonalDetailsContextProvider>
       </ImageFileContextProvider>
     </DataOfUser>
-  </BrowserRouter>
+  </HashRouter>
 );

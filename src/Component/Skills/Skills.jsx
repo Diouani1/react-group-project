@@ -108,6 +108,7 @@ const Skills = () => {
                 }}
               >
                 {addSkills.map((item, i) => (
+
                   <ListGroup.Item
                     key={i}
                     style={{
@@ -116,6 +117,7 @@ const Skills = () => {
                       justifyContent: "space-between",
                     }}
                   >
+
                     <li>{item}</li>
                     <Button
                       onClick={() => deleteHandler(item)}
