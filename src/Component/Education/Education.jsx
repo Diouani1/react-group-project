@@ -25,6 +25,7 @@ const Education = () => {
         Include every school, even if you're still there or didn't graduate.
       </p>
       <Form className="container">
+
         <Row className="firstsecondline">
           <Col>
             <Form.Group className="mb-4">
@@ -104,6 +105,7 @@ const Education = () => {
             }}
           >
             <Form.Label>{efo.start}</Form.Label>
+
             <Form.Control
               className="input"
               type="date"
@@ -138,17 +140,22 @@ const Education = () => {
           </FloatingLabel>
         </Form.Group>
 
+
         <ButtonGroup
           className="d-flex"
           style={{ justifyContent: "space-between" }}
         >
+
           <NavLink to="/workhistory">
             <Button variant="primary">Back</Button>
           </NavLink>
           <NavLink to="/skills">
             <Button variant="danger">Next</Button>
           </NavLink>
+
         </ButtonGroup>
+
+
       </Form>
     </div>
   );

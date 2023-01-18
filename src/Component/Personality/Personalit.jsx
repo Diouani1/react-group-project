@@ -14,7 +14,7 @@ const Personalit = () => {
       <h2 className="heading">
         <span>Tell us About Your Personality</span>
       </h2>
-      <InputGroup>
+      <InputGroup size="sm">
         <InputGroup.Text className="perso">Resilient</InputGroup.Text>
         <Form.Control
           as="textarea"
@@ -24,7 +24,7 @@ const Personalit = () => {
         />
       </InputGroup>
 
-      <InputGroup>
+      <InputGroup size="sm">
         <InputGroup.Text className="perso">Sociable</InputGroup.Text>
         <Form.Control
           as="textarea"
@@ -33,7 +33,7 @@ const Personalit = () => {
           value={perso.sociable}
         />
       </InputGroup>
-      <InputGroup>
+      <InputGroup size="sm">
         <InputGroup.Text className="perso">Creative</InputGroup.Text>
         <Form.Control
           as="textarea"
@@ -42,7 +42,7 @@ const Personalit = () => {
           value={perso.creative}
         />
       </InputGroup>
-      <InputGroup>
+      <InputGroup size="sm">
         <InputGroup.Text className="perso">Adaptable</InputGroup.Text>
         <Form.Control
           as="textarea"
@@ -51,7 +51,7 @@ const Personalit = () => {
           value={perso.adaptable}
         />
       </InputGroup>
-      <InputGroup>
+      <InputGroup size="sm">
         <InputGroup.Text className="perso">Empathetic</InputGroup.Text>
         <Form.Control
           as="textarea"
@@ -60,7 +60,7 @@ const Personalit = () => {
           value={perso.empathetic}
         />
       </InputGroup>
-      <InputGroup>
+      <InputGroup size="sm">
         <InputGroup.Text className="perso">Ambitious</InputGroup.Text>
         <Form.Control
           as="textarea"
