@@ -93,7 +93,9 @@ const Education = () => {
             </Form.Group>
           </Col>
         </Row>
-        <Row className="studydate">
+
+        <Row style={{ marginTop: "1rem" }}>
+
           <Col className="mb-3">
             <Form.Group>
               <Form.Label>Field of Study</Form.Label>
@@ -144,7 +146,9 @@ const Education = () => {
             <Form.Control
               as="textarea"
               placeholder="Leave a comment here "
+
               style={{ width: "50vw", height: "20vh" }}
+
               onChange={(e) => dispatch({ textArea: e.target.value })}
               value={grade.textArea}
             />

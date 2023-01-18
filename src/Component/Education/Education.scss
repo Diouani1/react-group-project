@@ -14,6 +14,7 @@
     color: blue;
   }
   .container {
+
     .firstsecondline {
       display: flex;
       justify-content: center;
@@ -41,6 +42,7 @@
       flex-direction: column;
       width: 20rem;
     }
+
     .input {
       height: 2rem;
       border-radius: 10px;
@@ -50,6 +52,7 @@
     margin: 2rem;
     border-radius: 10px;
   }
+
 
   .buttons {
     display: flex;
@@ -72,4 +75,5 @@
       }
     }
   }
+
 }
