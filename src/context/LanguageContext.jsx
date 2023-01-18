@@ -16,9 +16,6 @@ const LanguageContext = ({ children }) => {
   };
 
   const [language, setlanguage] = useReducer(reducer, initialState);
-  useEffect(() => {
-    console.log(language);
-  }, [language]);
 
   return (
     <LanguageData.Provider value={{ language, setlanguage }}>
