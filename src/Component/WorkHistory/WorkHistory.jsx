@@ -14,9 +14,9 @@ function WorkHistory() {
       <Container>
         <Row>
           <Col>
-            <h1 className="heading">
+            <div className="heading">
               <span>Tell us about your most recent job</span>
-            </h1>
+            </div>
             <p>We'll start there and work backward.</p>
           </Col>
         </Row>
