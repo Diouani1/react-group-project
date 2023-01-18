@@ -119,7 +119,7 @@ const CvStyle2 = () => {
             <li>Ambitious : {perso.ambitious}</li>
           </ul>
         </div>
-        <div>
+        {/* <div>
           <span style={{ color: color }}>Certificate</span>
           <ul>
             <li>
@@ -132,7 +132,7 @@ const CvStyle2 = () => {
               <p>Lorem ipsum dolor sit.</p>
             </li>
           </ul>
-        </div>
+        </div> */}
       </div>
     </div>
   );

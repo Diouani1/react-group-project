@@ -55,7 +55,7 @@ const CvStyle3 = () => {
             <li>Ambitious : {perso.ambitious}</li>
           </ul>
         </div>
-        <div>
+        {/* <div>
           <span style={{ color: color }}>Certificate</span>
           <ul>
             <li>
@@ -68,7 +68,7 @@ const CvStyle3 = () => {
               <p>Lorem ipsum dolor sit.</p>
             </li>
           </ul>
-        </div>
+        </div> */}
       </div>
       <div className="sideBar3" style={{ backgroundColor: color }}>
         <div className="titlcv3">
