@@ -100,7 +100,7 @@ const Skills = () => {
                 }}
               >
                 {addSkills.map((item, i) => (
-                  <ListGroup.Item>
+                  <ListGroup.Item key={i}>
                     <li>{item}</li>
                     <Button
                       onClick={() => deleteHandler(item)}

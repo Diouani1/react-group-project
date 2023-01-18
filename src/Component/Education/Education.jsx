@@ -4,7 +4,6 @@ import { useContext } from "react";
 import "./Education.scss";
 import { EduSkillContext } from "../EduSkillContext/EduSkillContext";
 
-
 const Education = () => {
   const { edu, efo, education, setEducation, grade, dispatch } =
     useContext(EduSkillContext);
@@ -20,7 +19,7 @@ const Education = () => {
       <Form className="container">
         <div className="firstsecondline">
           <Form.Group className="mb-3">
-            <Form.Label>{efo.name}</Form.Label>
+            <Form.Label>School Name</Form.Label>
             <Form.Control
               className="input"
               type="input"
@@ -72,7 +71,7 @@ const Education = () => {
         </div>
         <div className="thirdline">
           <Form.Group className="mb-3">
-            <Form.Label>{efo.field}</Form.Label>
+            <Form.Label></Form.Label>
             <Form.Control
               className="input"
               type="input"
@@ -113,20 +112,14 @@ const Education = () => {
         </Form.Group>
 
         <div className="buttons">
-        <NavLink to="/workhistory">
-          <Button variant="primary">
-            Back
-          </Button>
-        </NavLink>
-        <NavLink to="/skills">
-          <Button variant="danger">
-            Next
-          </Button>
-        </NavLink>
-      </div>
+          <NavLink to="/workhistory">
+            <Button variant="primary">Back</Button>
+          </NavLink>
+          <NavLink to="/skills">
+            <Button variant="danger">Next</Button>
+          </NavLink>
+        </div>
       </Form>
-
-      
     </div>
   );
 };
