@@ -1,0 +1,11 @@
+.language {
+  width: 60%;
+  margin: auto;
+  padding-top: 5%;
+}
+
+@media (max-width: 729px) {
+  .language {
+    width: 100%;
+  }
+}

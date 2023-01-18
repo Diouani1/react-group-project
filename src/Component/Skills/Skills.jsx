@@ -36,7 +36,7 @@ const Skills = () => {
   }
 
   return (
-    <Container>
+    <Container style={{ padding: "5% 0 1rem" }}>
       <Row>
         <Col sm={5}>
           <Container className="d-flex-column">
@@ -46,7 +46,7 @@ const Skills = () => {
               }}
             >
               <Form className="d-flex">
-                <h6>Add skill</h6>
+                {/* <h6>Add skill</h6> */}
                 <Form.Control
                   type="input"
                   placeholder="Enter a skill"
@@ -65,7 +65,7 @@ const Skills = () => {
               <ListGroup
                 as="ol"
                 style={{
-                  height: "60vh",
+                  height: "40vh",
                   overflow: "auto",
                 }}
               >
@@ -103,7 +103,7 @@ const Skills = () => {
             <div className="mainskills">
               <ListGroup
                 style={{
-                  height: "60vh",
+                  height: "40vh",
                   overflow: "auto",
                 }}
               >

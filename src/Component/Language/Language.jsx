@@ -1,21 +1,22 @@
+import "./language.css";
 import { useContext } from "react";
 import { Form, Button, FormControl } from "react-bootstrap";
 import { LanguageData } from "../../context/LanguageContext";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 
 const Language = () => {
   const { language, setlanguage } = useContext(LanguageData);
+  const navigate = useNavigate();
+  function handelSubmit(e) {
+    e.preventDefault();
+    navigate("/personality");
+  }
 
   return (
-    <div className="container">
-      <Form
-        style={{
-          width: "60%",
-          margin: "100px Auto",
-        }}
-      >
+    <div className="container" onSubmit={handelSubmit}>
+      <Form className="language">
         <Form.Group>
           <Form.Label>First Language</Form.Label>
 
@@ -24,6 +25,7 @@ const Language = () => {
             placeholder="Normal text"
             onChange={(e) => setlanguage({ firstLanguage: e.target.value })}
             value={language.firstLanguage}
+            required
           />
         </Form.Group>
 
@@ -94,21 +96,19 @@ const Language = () => {
             <option value="Complete">Complete</option>
           </Form.Select>
         </Form.Group>
-        <Row className="buttons" style={{paddingTop:"1rem"}}>
-        <Col className="left">
-          <NavLink to="/skills">
-            <Button variant="primary">Back</Button>
-          </NavLink>
-        </Col>
-        <Col className="right">
-          <NavLink to="/personality">
-            <Button variant="danger">Next</Button>
-          </NavLink>
-        </Col>
-      </Row>
+        <Row className="buttons" style={{ paddingTop: "1rem" }}>
+          <Col className="left">
+            <NavLink to="/skills">
+              <Button variant="primary">Back</Button>
+            </NavLink>
+          </Col>
+          <Col className="right">
+            <Button variant="danger" type="submit">
+              Next
+            </Button>
+          </Col>
+        </Row>
       </Form>
-
-      
     </div>
   );
 };

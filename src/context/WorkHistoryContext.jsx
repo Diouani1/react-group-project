@@ -18,9 +18,6 @@ const WorkHistoryContextProvider = ({ children }) => {
 
   const [state, dispatch] = useReducer(reducer, personalDetails);
 
-  useEffect(() => {
-    console.log(state);
-  }, [state]);
   return (
     <WorkHistoryContext.Provider value={{ state, dispatch }}>
       {children}

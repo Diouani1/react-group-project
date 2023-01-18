@@ -11,7 +11,7 @@ import { MdAlternateEmail } from "react-icons/md";
 import { MdContactPhone } from "react-icons/md";
 import { MdLocationOn } from "react-icons/md";
 const CvStyle1 = () => {
-  const { grade } = useContext(EduSkillContext);
+  const { grade, addSkills } = useContext(EduSkillContext);
   const { language } = useContext(LanguageData);
   const { details } = useContext(PersonalDetailsContext);
   const { color } = useContext(DataUeser);
@@ -68,10 +68,9 @@ const CvStyle1 = () => {
         <div>
           <span>Skills</span>
           <ul>
-            <li>word</li>
-            <li>word</li>
-            <li>word</li>
-            <li>word</li>
+            {addSkills.map((item, index) => (
+              <li key={index}>{item}</li>
+            ))}
           </ul>
         </div>
       </div>

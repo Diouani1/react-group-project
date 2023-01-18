@@ -7,7 +7,7 @@ import {
   Col,
   ButtonGroup,
 } from "react-bootstrap";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import "./Education.scss";
 import { EduSkillContext } from "../EduSkillContext/EduSkillContext";
@@ -16,8 +16,14 @@ const Education = () => {
   const { edu, efo, education, setEducation, grade, dispatch } =
     useContext(EduSkillContext);
 
+  const navigate = useNavigate();
+  function handelSubmit(e) {
+    e.preventDefault();
+    navigate("/skills");
+  }
+
   return (
-    <div className="education">
+    <div className="education" onSubmit={handelSubmit}>
       <h1>
         <span>Tell us about your education</span>
       </h1>
@@ -28,25 +34,27 @@ const Education = () => {
         <Row className="firstsecondline">
           <Col>
             <Form.Group className="mb-4">
-              <Form.Label>{efo.name}</Form.Label>
+              <Form.Label>School Name</Form.Label>
               <Form.Control
                 className="input"
                 type="input"
                 placeholder="e.g.Leipzig-University"
                 onChange={(e) => dispatch({ name: e.target.value })}
                 value={grade.name}
+                required
               />
             </Form.Group>
           </Col>
           <Col>
             <Form.Group className="mb-4">
-              <Form.Label>{efo.location}</Form.Label>
+              <Form.Label>School Location</Form.Label>
               <Form.Control
                 className="input"
                 type="input"
                 placeholder="e.g.Leipzig,Germany"
                 onChange={(e) => dispatch({ location: e.target.value })}
                 value={grade.location}
+                required
               />
             </Form.Group>
           </Col>
@@ -54,13 +62,14 @@ const Education = () => {
         <Row className="firstsecondline">
           <Col>
             <Form.Group className="mb-6">
-              <Form.Label>{efo.degree}</Form.Label>
+              <Form.Label>Degree</Form.Label>
 
               <Form.Select
                 className="input"
                 aria-label="Default select example"
                 onChange={(e) => dispatch({ degree: e.target.value })}
                 value={grade.degree}
+                required
               >
                 <option>Select a Degree</option>
                 {edu.map((item, i) => (
@@ -73,7 +82,7 @@ const Education = () => {
           </Col>
           <Col>
             <Form.Group className="mb-6">
-              <Form.Label>{efo.enter}</Form.Label>
+              <Form.Label>Enter a different degree </Form.Label>
               <Form.Control
                 className="input"
                 type="input"
@@ -84,16 +93,19 @@ const Education = () => {
             </Form.Group>
           </Col>
         </Row>
+
         <Row style={{ marginTop: "1rem" }}>
+
           <Col className="mb-3">
             <Form.Group>
-              <Form.Label>{efo.field}</Form.Label>
+              <Form.Label>Field of Study</Form.Label>
               <Form.Control
                 className="input"
                 type="input"
                 placeholder="e.g. Music"
                 onChange={(e) => dispatch({ field: e.target.value })}
                 value={grade.field}
+                required
               />
             </Form.Group>
           </Col>
@@ -103,12 +115,14 @@ const Education = () => {
               flexDirection: "column",
             }}
           >
-            <Form.Label>{efo.start}</Form.Label>
+            <Form.Label>Graduation Start Date</Form.Label>
+
             <Form.Control
               className="input"
               type="date"
               onChange={(e) => dispatch({ start: e.target.value })}
               value={grade.start}
+              required
             />
           </Col>
           <Col
@@ -117,12 +131,13 @@ const Education = () => {
               flexDirection: "column",
             }}
           >
-            <Form.Label>{efo.end}</Form.Label>
+            <Form.Label>Graduation End Date</Form.Label>
             <Form.Control
               className="input"
               type="date"
               onChange={(e) => dispatch({ end: e.target.value })}
               value={grade.end}
+              required
             />
           </Col>
         </Row>
@@ -131,7 +146,9 @@ const Education = () => {
             <Form.Control
               as="textarea"
               placeholder="Leave a comment here "
-              style={{ width: "68vw", height: "30vh" }}
+
+              style={{ width: "50vw", height: "20vh" }}
+
               onChange={(e) => dispatch({ textArea: e.target.value })}
               value={grade.textArea}
             />
@@ -142,12 +159,13 @@ const Education = () => {
           className="d-flex"
           style={{ justifyContent: "space-between" }}
         >
-          <NavLink to="/workhistory">
-            <Button variant="primary">Back</Button>
-          </NavLink>
-          <NavLink to="/skills">
-            <Button variant="danger">Next</Button>
-          </NavLink>
+          <Button variant="primary" onClick={() => navigate("/workhistory")}>
+            Back
+          </Button>
+
+          <Button variant="danger" type="submit">
+            Next
+          </Button>
         </ButtonGroup>
       </Form>
     </div>
