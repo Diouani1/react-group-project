@@ -5,8 +5,13 @@
   gap: 1rem;
   width: 45%;
   margin: auto;
-
 }
 .perso {
   width: 100px;
+}
+
+@media (max-width: 729px) {
+  .personality {
+    width: 100%;
+  }
 }
