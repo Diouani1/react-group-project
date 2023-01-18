@@ -7,7 +7,7 @@ import {
   Col,
   ButtonGroup,
 } from "react-bootstrap";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import "./Education.scss";
 import { EduSkillContext } from "../EduSkillContext/EduSkillContext";
@@ -16,8 +16,14 @@ const Education = () => {
   const { edu, efo, education, setEducation, grade, dispatch } =
     useContext(EduSkillContext);
 
+  const navigate = useNavigate();
+  function handelSubmit(e) {
+    e.preventDefault();
+    navigate("/skills");
+  }
+
   return (
-    <div className="education">
+    <div className="education" onSubmit={handelSubmit}>
       <h1>
         <span>Tell us about your education</span>
       </h1>
@@ -35,6 +41,7 @@ const Education = () => {
                 placeholder="e.g.Leipzig-University"
                 onChange={(e) => dispatch({ name: e.target.value })}
                 value={grade.name}
+                required
               />
             </Form.Group>
           </Col>
@@ -47,6 +54,7 @@ const Education = () => {
                 placeholder="e.g.Leipzig,Germany"
                 onChange={(e) => dispatch({ location: e.target.value })}
                 value={grade.location}
+                required
               />
             </Form.Group>
           </Col>
@@ -61,6 +69,7 @@ const Education = () => {
                 aria-label="Default select example"
                 onChange={(e) => dispatch({ degree: e.target.value })}
                 value={grade.degree}
+                required
               >
                 <option>Select a Degree</option>
                 {edu.map((item, i) => (
@@ -94,6 +103,7 @@ const Education = () => {
                 placeholder="e.g. Music"
                 onChange={(e) => dispatch({ field: e.target.value })}
                 value={grade.field}
+                required
               />
             </Form.Group>
           </Col>
@@ -110,6 +120,7 @@ const Education = () => {
               type="date"
               onChange={(e) => dispatch({ start: e.target.value })}
               value={grade.start}
+              required
             />
           </Col>
           <Col
@@ -124,6 +135,7 @@ const Education = () => {
               type="date"
               onChange={(e) => dispatch({ end: e.target.value })}
               value={grade.end}
+              required
             />
           </Col>
         </Row>
@@ -143,12 +155,13 @@ const Education = () => {
           className="d-flex"
           style={{ justifyContent: "space-between" }}
         >
-          <NavLink to="/workhistory">
-            <Button variant="primary">Back</Button>
-          </NavLink>
-          <NavLink to="/skills">
-            <Button variant="danger">Next</Button>
-          </NavLink>
+          <Button variant="primary" onClick={() => navigate("/workhistory")}>
+            Back
+          </Button>
+
+          <Button variant="danger" type="submit">
+            Next
+          </Button>
         </ButtonGroup>
       </Form>
     </div>

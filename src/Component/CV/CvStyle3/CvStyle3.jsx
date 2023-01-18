@@ -102,7 +102,7 @@ const CvStyle3 = () => {
         <div>
           <span>Language</span>
 
-          <div className="language">
+          <div className="div">
             <div className="row1">
               <span className="col1">{language.firstLanguage}</span>
               <span className="col1">{language.firstLanguageLevel}</span>

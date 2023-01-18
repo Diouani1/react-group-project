@@ -4,13 +4,20 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 import { PersonalDetailsContext } from "context/PersonalDetailsContext";
+import Button from "react-bootstrap/Button";
+import { useNavigate } from "react-router-dom";
 
 function PersonalDetails() {
   const { details, dispatch } = useContext(PersonalDetailsContext);
+  const navigate = useNavigate();
+  function handelSubmit(e) {
+    e.preventDefault();
+    navigate("workhistory");
+  }
   return (
     <div>
       <Container>
-        <Form>
+        <Form onSubmit={handelSubmit}>
           <Row className="mb-3">
             <Form.Group as={Col} sm={12} md={12} lg={6}>
               <Form.Label>First Name</Form.Label>
@@ -19,6 +26,7 @@ function PersonalDetails() {
                 type="text"
                 placeholder="First Name"
                 value={details.firstName}
+                required
               />
             </Form.Group>
 
@@ -29,6 +37,7 @@ function PersonalDetails() {
                 type="text"
                 placeholder="Last Name"
                 value={details.lastName}
+                required
               />
             </Form.Group>
           </Row>
@@ -37,6 +46,7 @@ function PersonalDetails() {
             <Form.Control
               onChange={(e) => dispatch({ profession: e.target.value })}
               value={details.profession}
+              required
             />
           </Form.Group>
           <Row className="mb-3">
@@ -45,6 +55,7 @@ function PersonalDetails() {
               <Form.Control
                 onChange={(e) => dispatch({ city: e.target.value })}
                 value={details.city}
+                required
               />
             </Form.Group>
 
@@ -53,6 +64,7 @@ function PersonalDetails() {
               <Form.Control
                 onChange={(e) => dispatch({ postalCode: e.target.value })}
                 value={details.postalCode}
+                required
               />
             </Form.Group>
 
@@ -61,6 +73,7 @@ function PersonalDetails() {
               <Form.Control
                 onChange={(e) => dispatch({ country: e.target.value })}
                 value={details.country}
+                required
               />
             </Form.Group>
           </Row>
@@ -71,6 +84,7 @@ function PersonalDetails() {
                 onChange={(e) => dispatch({ phone: e.target.value })}
                 placeholder="e.g. +49-123-4567-89"
                 value={details.phone}
+                required
               />
             </Form.Group>
             <Form.Group as={Col} sm={12} md={12} lg={6}>
@@ -83,6 +97,15 @@ function PersonalDetails() {
                 value={details.email}
               />
             </Form.Group>
+          </Row>
+          <Row className="buttons">
+            <Col className="right">
+              {/* <NavLink to=> */}
+              <Button variant="danger" type="submit">
+                Next
+              </Button>
+              {/* </NavLink> */}
+            </Col>
           </Row>
         </Form>
       </Container>
