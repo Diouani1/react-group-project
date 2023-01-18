@@ -64,7 +64,7 @@ const Education = () => {
               >
                 <option>Select a Degree</option>
                 {edu.map((item, i) => (
-                  <option key={i} value={i}>
+                  <option key={i} value={item}>
                     {item}
                   </option>
                 ))}
@@ -84,7 +84,7 @@ const Education = () => {
             </Form.Group>
           </Col>
         </Row>
-        <Row>
+        <Row style={{ marginTop: "1rem" }}>
           <Col className="mb-3">
             <Form.Group>
               <Form.Label>{efo.field}</Form.Label>
@@ -131,7 +131,7 @@ const Education = () => {
             <Form.Control
               as="textarea"
               placeholder="Leave a comment here "
-              style={{ width: "70vw", height: "30vh" }}
+              style={{ width: "68vw", height: "30vh" }}
               onChange={(e) => dispatch({ textArea: e.target.value })}
               value={grade.textArea}
             />
