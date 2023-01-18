@@ -4,3 +4,21 @@ span {
 h1 {
   text-align: center;
 }
+.skills {
+  padding: 0.5rem;
+}
+@media (max-width: 560px) {
+  .skills {
+    font-size: 90%;
+    span {
+      font-size: 70%;
+    }
+    div {
+      align-items: center;
+    }
+
+    .list-group-item {
+      width: 100%;
+    }
+  }
+}

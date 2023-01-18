@@ -94,7 +94,7 @@ const Education = () => {
           </Col>
         </Row>
 
-        <Row style={{ marginTop: "1rem" }}>
+        <Row className="studydate" style={{ marginTop: "1rem" }}>
           <Col className="mb-3">
             <Form.Group>
               <Form.Label>Field of Study</Form.Label>
